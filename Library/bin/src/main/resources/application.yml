@@ -1,0 +1,34 @@
+#서버포트 지정
+server:
+  port: 8010
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-request: true
+      force-response: true
+  tomcat :
+    uri-encoding : UTF-8
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  security:
+    user:
+      name: test
+      password : 1234
+          
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://121.175.150.249:3306/project_20220113_01?useUnicode=true
+    username : tp220113_01
+    password : "0486"
+mybaits:
+  mapper-locations:
+    - /mappers/*.xml
+

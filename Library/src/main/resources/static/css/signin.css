@@ -1,0 +1,101 @@
+body {
+    overflow-y: hidden;
+}
+
+.wrap {
+   
+    width: 100%;
+    height: 100%;
+    background : url("/image/siginmain.jpg") no-repeat;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+
+    
+
+}
+
+.wrap .form-wrap {
+    width: 380px;
+    height: 480px;
+    margin: 5% auto;
+    background-color: #fff;
+    position: relative;
+    padding: 17px 0 0;
+}
+.wrap .form-wrap .form-title {
+    text-align: center;
+    margin : 20px auto;
+    width: 240px;
+    border-radius: 30px;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px;
+    font-weight: 600;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    cursor: pointer;
+}
+
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+  
+}
+.social-icons img {
+    width: 30px;
+    cursor: pointer;
+}
+
+#login {
+    left: 50px;
+}
+
+.input-group {
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;    
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.sec3 {
+    padding-top: 11px;
+    border-bottom: 1px solid #b9b9bd;
+
+}   
+
+.find-group {
+    position: absolute;
+    top: 340px;
+    left: 50px;
+    margin: 0 auto;
+    width: 280px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+.find-group a {
+    color : #fff;
+    font-weight: 600;
+}
+
+.find-user { 
+    display: inline-block;   
+    margin: 0 auto;
+    width: 95px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: #d17896;
+}

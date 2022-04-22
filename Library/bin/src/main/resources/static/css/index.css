@@ -1,0 +1,357 @@
+body {
+ 
+}
+
+/* 이미지 콘텐츠 영역 */
+#h-container {
+    /* 버튼 기준(부모) */
+    position: relative; 
+    width: 100%;
+    height: 470px;
+}
+.h-wrap {
+/* 지나가는 이미지 기준(부모) */
+    position: relative;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+}
+.h-wrap ul li {
+    position: absolute;
+    width: 100%;
+    height: 470px;
+    font-size: 300px;
+    top : 0;
+}
+.h-wrap li:first-child {
+    left : 0;
+
+}
+.h-wrap li:nth-child(2) {
+    left : 100%;
+
+}
+.h-wrap li:nth-child(3) {
+    left : 100%;
+
+}
+.h-wrap li:nth-child(4) {
+    left : 100%;
+
+}
+.h-wrap li > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* image end */
+
+/* 버튼 디자인 */
+.h-btns {
+    position: absolute;
+    left: 50%;
+    top : 95%;
+}
+.h-btns li {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    background-color: #000;
+    text-align: center;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.h-btns li:hover {
+    background-color : #cf3131;
+}
+.h-btns li.on {
+    background-color : #cf3131;
+}
+/* button end */
+
+/* 검색 버튼 */
+.main_bg {
+    position: absolute;
+    width: 100%;
+    top : 98px;
+    z-index: 99999;
+}
+.main1 {
+    position: relative;
+}
+.section {
+    clear: both;
+    position: relative;
+    margin: 0 auto;
+}
+.title-box {
+    position: relative;
+    margin : 0px auto;
+    width: 890px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 11px rgb(0 0 0 / 30%);
+}
+
+.title-box .in-search {
+    width: 100%;
+    height: 75px;
+    box-sizing: border-box;
+    line-height: 80px;
+    padding : 0 2% 0 138px;
+    color : #333;
+    font-size: 18px;
+    border : 0;
+    cursor: text;
+    border-radius: 50px;
+    box-sizing: border-box;
+    padding-right: 175px;
+}
+
+
+.title-box .in-la {
+    position: absolute;
+    display: inline-block;
+    top:18px;
+    left : 30px;
+    font-size: 0;
+    color : #4881fd;
+    width: 38px;
+    height: 38px;
+    letter-spacing: -1.5px;
+    text-align: center;
+    background: url("https://library.busan.go.kr/resources/homepage/busanlibrary/img/search-icon.png") no-repeat 0 0;
+}
+
+.title-box button {
+    position: absolute;
+    right : 7px;
+    top : 4px;
+    text-align: center;
+    font-size: 0;
+    background : url("https://library.busan.go.kr/resources/homepage/busanlibrary/img/search-btn.png");
+    z-index: 190;
+    width: 175px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.in-latter-check {
+    width: 800px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.section .check-la {
+    display: inline;
+    line-height: 30px;
+    padding : 10px;
+    font-size: 14px;
+    font-weight: 900;
+}
+/* end search */
+
+/* section-group2 */
+.setion-group2 {
+    padding : 40px 0;
+}
+.setion-group2 .sec-group {
+
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.setion-group2 .sec-group > .content1{
+    display: inline-block;
+    width: 400px;
+    height: 425px;
+    border : 1px solid #d3d2cf;
+}
+.setion-group2 .sec-group > .content2 {
+    display: inline-block;
+    width: 400px;
+    height: 425px;
+    border: 1px solid  #d3d2cf;
+    margin : 0 40px;
+}
+.setion-group2 .sec-group > .content3 {
+     display: inline-block;
+    width: 400px;
+    height: 425px;
+    border: 1px solid  #d3d2cf; 
+}
+/* section-group2 - end */
+
+
+
+
+/* section-group3 */
+
+.section-group3 {
+    padding : 50px 0;
+    background : url("/image/back.jpg")0 35% no-repeat ;
+}
+
+.book-list-zone {
+    box-sizing: border-box;
+    max-width: 1300px;
+    height: 400px;
+    margin: 0 auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 13px;
+    background-color: #fff;
+}
+.book-list-zone .book-list {
+    height: 54px;
+    padding : 10px 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.book-list-zone .book-list > li {
+    float: left;
+    font-size: 1.8rem;
+    padding : 14.2px;
+}
+.book-list-zone .book-list > li > a{
+    color : #000;
+}
+.book-list-zone .book-list > li.on a{
+    color: #cf3131;
+ 
+ 
+}
+
+.book-image {
+    padding : 5px 20px;
+
+}
+.book-image .book-image-list {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.book-image .book-image-list li {
+    float: left;
+    width: 20.0%;
+    text-align: center;
+    box-sizing: border-box;
+    padding : 5px 20px;
+}
+.book-image .book-image-list li > .cov {
+    display: block;
+    padding : 0 20px 8px 6px;
+}
+.book-image .book-image-list li > span > a {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+}
+.book-image .book-image-list li > span >  a  >img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+.book-image .book-image-list .txt {
+    display: block;
+    overflow: hidden;
+    margin-right: 7px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color : #666;
+}
+
+/* section-group3 - end */
+
+
+
+
+
+
+/* footer 영역 */
+
+footer {
+    margin-top: 60px;
+    padding : 0 0 70px;
+    background-color: #2f2f2f;
+}
+
+.f-top {
+    height: 54px;
+    padding : 25px 0;
+    border-bottom: 1px solid #666;
+    
+
+}
+.f-top-in {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: blueviolet;
+}
+.f-top-in .f-in-list {
+    float: left;
+}
+.f-top-in .f-in-list li {
+    display: inline-block;
+    padding : 0 20px;
+}
+.f-top-in .f-in-list li a {
+    display: block;
+    padding : 15px;
+    font-size: 16.5px;
+    font-weight: 600;
+}
+.f-top-in .f-in-list li span {
+    color : #f1d57e;
+}
+
+.f-bootom {
+    padding : 23px 0 0;
+
+}
+
+.f-bootom .btn-wrap {
+    position: fixed;
+    font-size: 20px;
+    transition: opacity .8s;
+    z-index: 1000;
+    right: 45px;
+    bottom: 40px;
+    opacity: 1;
+   
+}
+.f-bootom .btn-wrap > a {
+    display: inline-block;
+    width: 45px;
+    height: 38px;
+    padding : 7px 0 0;
+    text-align: center;
+    line-height: 38px;
+    opacity: .8;
+    border-radius: 6px;
+ 
+}
+.f-bootom .btn-wrap > a > img{
+    width: 100%;
+    height: 100%;
+    color: blue;
+}
+
+
+
+
+
+
+
+/* 반응형 작업 공간 */
+
+ @media (min-width : 1200px) {
+    .section {
+        width : 100%;
+    }
+}
+

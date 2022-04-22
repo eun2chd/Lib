@@ -1,0 +1,28 @@
+* {
+    padding : 0;
+    margin : 0;
+    border : 0;
+}
+
+a {
+    color : #fff;
+    text-decoration: none;
+}
+
+body {
+
+    font-size: 14px;
+    box-sizing: border-box;
+        font-family: 'Noto Sans','나눔고딕',NanumGothic,'맑은 고딕','Malgun Gothic','AppleGothic',serif;
+
+}
+img {
+    width: 100%;   
+}
+li {
+    list-style: none;
+}
+
+input[type="checkbox"]{
+    margin-right: 5px;
+}

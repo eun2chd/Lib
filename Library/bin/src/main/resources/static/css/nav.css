@@ -1,0 +1,132 @@
+.container {
+    position: relative;
+    width: 100%;
+    background-color: #202020;
+    overflow: hidden;
+}
+
+/* 왼쪽 헤더 */
+.left-util {
+    display: inline-block;
+    width: 100px;
+    height: 44px;
+    margin-left: 150px;
+}
+
+.left-util li {
+
+    width: 110px;
+
+}
+.left-util li a{
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    width: 110px;
+    font-weight: 700;
+}
+/* left-header end */
+
+
+/* 오른쪽 상단 헤더 */
+.right-util {
+    float : right;
+}
+
+.right-util li {
+    display: inline-block;
+    width: 90px;
+}
+
+.right-util ul {
+    width: 100%;
+    margin-right: 60px;
+}
+
+.right-util li a {
+    display: block;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+.right-util .lib {
+    color : #58adee;   
+}
+
+.right-util li a:hover {
+    color : #ff0000;  
+}
+/* top-header end */
+
+/* 헤더 로고 리스트 */
+.header-logo{
+
+    width: 1400px;
+    margin : 0 auto;
+    background-color: aqua;
+}
+.header-logo h1 {
+    position: absolute;
+    z-index: 1000;
+    float: left;
+    padding-top: 20px;
+    width: 200px;
+    margin-left:2px;
+}
+/* header - logo - end */
+
+/* hear-nav-list */
+.navbar  {
+    text-align: right;
+}
+
+.navbar li {
+    display: inline-block;
+    width: 13%;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+}
+.navbar li a {
+    display: block;
+    line-height: 90px;
+    font-size: 25px;
+    font-weight: 600;
+    color : #000;
+    text-align: center;
+}
+.navbar li a:hover {
+    color : #ff0000;
+}
+/* header-nav - end  */
+
+
+
+
+
+
+
+
+
+
+
+/* 반응형 추후에 작업 */
+/* @media (max-width : 1260px) {
+
+    .section {
+        width: 100%;
+        padding: 0 5%;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        padding-right: 0;
+    }
+    
+    
+} */
+

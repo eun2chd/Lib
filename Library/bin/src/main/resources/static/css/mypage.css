@@ -1,0 +1,220 @@
+body {
+ 
+}
+
+#section-container {
+    width: 100%;
+    height: 640px;
+
+}
+
+
+.h-wrap {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: url("/image/lib01.jpg") no-repeat 50%;
+    background-size: 100%;
+}
+.h-wrap img {
+    width: 100%;
+    height: auto;
+}
+.section {
+    padding-top: 10px;
+    width: 1260px;
+    margin: 0 auto;
+}
+.section .lnb {
+    padding : 0 0 60px;
+    width: 280px;
+    z-index: 9999;
+    position: relative;
+    float: left;
+   
+   
+}
+.section .lnb h2 {
+    margin-top: -179px;
+    display: block;
+    background : url("/image/myLib.png") no-repeat center center;
+    backgroundd-size: cover;
+ 
+}
+.section .lnb b {
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    padding: 65px 0;
+    margin : 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+.lnb > ul > li{
+    border-bottom: 1px solid #d9d9d9; 
+     
+}
+.lnb ul li.active > a{
+    background-color: #1A73E8;
+    color : #fff;
+    position: relative;
+}
+
+
+.lnb > ul > li > a{
+    font-size: 14px;
+    font-weight: bold;
+    padding : 12px 20px 10px 15px;
+    display: block;
+}
+
+.lnb>ul>li>ul {
+    background: #f7f7f7;
+    padding: 5px 0 10px;
+}
+
+.lnb>ul>li>ul>li>a {
+    padding :5px 20px 5px 30px;
+}
+.lnb ul ul li.active > a{
+    background-color: #f7f7f7;
+    color : #003b9d;
+    font-weight: bold;
+}
+.lnb>ul>li>ul>li>a {
+    padding: 5px 20px 5px 30px;
+}
+
+.lnb>ul>li.active>ul {
+    display: block;
+}
+
+.lnb a {
+    display: block;
+    color: #4c4c4c;
+}
+
+.lnb a span {
+    display: inline-block;
+}
+
+/* 而⑦뀗痢� �쁺�뿭 */
+.content {
+    width: 78%;
+    float: left;
+    box-sizing: border-box;
+    margin-right: -283px;
+    margin-left: 40px;
+}
+.bor {
+    padding : 0 0 60px;
+}
+.bor-head {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 30px;
+}
+.bor-title {
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    padding : 10px 0 15px 0;
+}
+.bor-title h3 {
+    display: inline-block;
+    zoom : 1;
+    font-size: 28px;
+    color:#222;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+/* table */
+table {
+   width: 100%;
+    border-top: 2px solid #5c6062;
+    border-bottom: 2px solid #ccc;
+}
+table,td,td {
+    border-collapse: collapse;
+}
+
+.book-list th {
+    background-color: #f6f6f6;
+    padding : 8px 5px;
+    font-size: 90%;
+}
+.book-list table th {
+    border : 1px solid #e2e2e2;
+}
+
+
+
+footer {
+    margin-top: 60px;
+    padding : 0 0 70px;
+    background-color: #2f2f2f;
+}
+
+.f-top {
+    height: 54px;
+    padding : 25px 0;
+    border-bottom: 1px solid #666;
+    
+
+}
+.f-top-in {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: blueviolet;
+}
+.f-top-in .f-in-list {
+    float: left;
+}
+.f-top-in .f-in-list li {
+    display: inline-block;
+    padding : 0 20px;
+}
+.f-top-in .f-in-list li a {
+    display: block;
+    padding : 15px;
+    font-size: 16.5px;
+    font-weight: 600;
+}
+.f-top-in .f-in-list li span {
+    color : #f1d57e;
+}
+
+.f-bootom {
+    padding : 23px 0 0;
+
+}
+
+.f-bootom .btn-wrap {
+    position: fixed;
+    font-size: 20px;
+    transition: opacity .8s;
+    z-index: 1000;
+    right: 45px;
+    bottom: 40px;
+    opacity: 1;
+   
+}
+.f-bootom .btn-wrap > a {
+    display: inline-block;
+    width: 45px;
+    height: 38px;
+    padding : 7px 0 0;
+    text-align: center;
+    line-height: 38px;
+    opacity: .8;
+    border-radius: 6px;
+ 
+}
+.f-bootom .btn-wrap > a > img{
+    width: 100%;
+    height: 100%;
+    color: blue;
+}
