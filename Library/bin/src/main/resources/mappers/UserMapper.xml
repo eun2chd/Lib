@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.domain.user.UserRepository">
+
+	<insert id="insertUser" parameterType="com.example.demo.domain.user.User">
+		INSERT INTO
+			TB_USER_MST
+		VALUES(
+			0,
+			#{userid},
+			#{username},
+			#{userPw},
+			#{usermail},
+			#{userprovider},
+			#{userRole},
+			#{oauth2_username},
+			NOW(),
+			NOW()
+		);
+
+	</insert>
+
+	<select id="getUserByOauth2Username" resultType="com.example.demo.domain.user.User" parameterType="String">
+		select
+		*
+		from
+			TB_USER_MST
+		where
+			oauth2_username = #{oauth2_username};
+	</select>
+
+<!-- 	<select id="getUserDtlById" resultType="com.example.demo.domain.user.User" parameterType="Integer">
+		select
+			*
+		from
+			TB_USER_DTL
+		where
+			id = #{id};
+	</select>
+	 
+ -->
+	
+
+
+</mapper>
+  

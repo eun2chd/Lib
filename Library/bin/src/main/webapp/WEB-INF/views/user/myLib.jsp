@@ -9,45 +9,13 @@
     <title>내 서재</title>
     <link rel="shortcut icon" href="/image/icon.png">
     <link rel="stylesheet" href="/css/mypage.css">
-     <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/nav.css">
+
 </head>
 <body>
 
       <jsp:include page="../include/nav.jsp"></jsp:include>
 	
-        <!-- header nav 메뉴 -->
-        <div class="g-menu">
-            <ul class="navbar">
-                <li>
-                    <a href="#">
-                        <span>HOME</span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="#">
-                        <span>Search</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span>Book List</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span>#</span>
-                    </a>
-                </li>
-            </ul>
-            <!-- end header-menu -->
-        </div>
-        <!-- end header-->
-    </header>
-    <!-- end conatiner -->
 
     <div id = "section-container">
         <div class="h-wrap"></div>
@@ -64,14 +32,14 @@
                         </a>
                        <ul>
                         <li class = "active">
-                            <a href="#">
+                            <a href="/user/myLib">
                                 <span>대출중인 도서</span>
                             </a>
                             
                         </li>
                         <li>
-                            <a href="#">
-                                <span>대출이력</span>
+                            <a href="/user/myhistory">
+                                <span style = "font-weight : bold">대출이력</span>
                             </a>
                             
                         </li>
@@ -83,6 +51,11 @@
                             <span>회원정보 수정</span>
                         </a>
                     </li>
+                     <li>
+                          <a href="/user/myinter">
+                             <span style="font-weight: bold;">나의 관심 도서</span>
+                          </a>
+                     </li>
                   
                 </ul>
     
@@ -106,6 +79,13 @@
                                 <th style="width: 20%;">지은이</th>
                                 <th style="width: 20%;">출판사</th>
                             </tr>
+                            
+                            <tr>
+                                <td>우아한 방어</td>
+                                <td>부산도서관</td>
+                                <td>지은이</td>
+                                <td>부산시 출판사</td>
+                           </tr>
                         </tbody>
                     </table>
         

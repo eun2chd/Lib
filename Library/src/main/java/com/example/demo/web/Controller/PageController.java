@@ -17,15 +17,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.domain.user.BookInfoRepository;
-import com.example.demo.web.dto.bookList;
+
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
 public class PageController {
-	
-	private final BookInfoRepository bookInfoRepository;
+
 	
 	@GetMapping({"/","/index"})
 	public String indexForm() {
@@ -42,15 +41,12 @@ public class PageController {
 		return "user/myLib";
 	}
 	
+
 	@GetMapping("/user/myhistory")
 	public String MyLibHistory() {
 		return "user/myLibHistory";
 	}
 	
-	@GetMapping("/book/booklist")
-	public String WrapBookListForm(Model model) {
-		return "/book/booklist";
-	}
 	
 	@GetMapping("/user/myinter")
 	public String myInterFrom() {

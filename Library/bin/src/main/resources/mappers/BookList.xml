@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.domain.user.BookInfoRepository">
+
+	<select id="bookListTotalCount" parameterType="com.example.demo.domain.user.BookInfoRepository"  resultType="integer">
+
+	SELECT 
+		COUNT(*)
+	FROM
+		TB_LIBRARY
+	
+	</select>
+	
+	<select id="getBookList" resultType="com.example.demo.web.dto.bookList">
+
+	 SELECT 
+ 		REG_NO,
+ 		LOCATION,
+ 		REF_ROOM,
+ 		BOOK_NAME,
+ 		AUTHOR,
+ 		PUBLISHER,
+ 		YR_PUBLICATION
+	 FROM
+		TB_LIBRARY 
+		
+	</select>
+	
+	
+	
+
+</mapper>
+  

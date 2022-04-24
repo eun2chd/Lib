@@ -67,23 +67,14 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="#">
-                            <span>Search</span>
-                        </a>
-                    </li>
-
+ 
                     <li>
                         <a href="/book/booklist">
                             <span>Book List</span>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="#">
-                            <span>#</span>
-                        </a>
-                    </li>
+         
                 </ul>
                 <!-- end header-menu -->
             </div>

@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-/* 왼쪽 헤더 */
+
 .left-util {
     display: inline-block;
     width: 100px;
@@ -30,7 +30,7 @@
 /* left-header end */
 
 
-/* 오른쪽 상단 헤더 */
+
 .right-util {
     float : right;
 }
@@ -62,7 +62,7 @@
 }
 /* top-header end */
 
-/* 헤더 로고 리스트 */
+
 .header-logo{
 
     width: 1400px;
@@ -114,7 +114,7 @@
 
 
 
-/* 반응형 추후에 작업 */
+
 /* @media (max-width : 1260px) {
 
     .section {

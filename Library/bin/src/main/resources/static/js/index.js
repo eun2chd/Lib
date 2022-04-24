@@ -1,6 +1,7 @@
 $(function () {
 
     var result = 0;
+    var bookClick = 0; // 책 이동
     var setTime;
     // 첫번째 버튼 on 적용
     $(".h-btns > li").eq(0).addClass("on");
@@ -16,6 +17,18 @@ $(function () {
         move(i); // 함수호출
 
     });
+    
+     $(".book-list > li").eq(0).addClass("on");
+    $(".book-list > li").click(function () {
+        var j = $(this).index();
+
+        $(".book-list > li").removeClass("on");
+        $(this).addClass("on");
+        console.log(j);
+
+        bookshow(j);
+
+    })
 
     // 자동실행 제어
     $("#h-container").on({
@@ -80,6 +93,36 @@ $(function () {
         result = n;
 
     }
+    
+       function bookshow(n) {
+        if (bookClick == n) {
+            return;
+        } else if (n == 0) {
+            $("#book-sug").show();
+            $("#book-best").hide();
+            $("#book-best-pop").hide();
+            $("#book-top").hide();
+        } else if (n == 1) {
+            $("#book-sug").hide();
+            $("#book-best").show();
+            $("#book-best-pop").hide();
+            $("#book-top").hide();
+        } else if (n == 2) {
+            $("#book-sug").hide();
+            $("#book-best").hide();
+            $("#book-best-pop").show();
+            $("#book-top").hide();
+        } else if (n == 3) {
+            $("#book-sug").hide();
+            $("#book-best").hide();
+            $("#book-best-pop").hide();
+            $("#book-top").show();
+        }
+
+
+        bookClick = n;
+    }
+
 
 
 

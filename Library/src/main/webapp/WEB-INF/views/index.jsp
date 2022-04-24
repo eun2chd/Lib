@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
     
 <!DOCTYPE html>
@@ -9,8 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta HTTP-EQUIV="refresh" CONTENT="70">
-    <title>µµ¼­°ü indexÆäÀÌÁö</title>
+    <title>ë„ì„œê´€ indexíŽ˜ì´ì§€</title>
     <link rel="shortcut icon" href="/image/icon.png">
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/jquery.js"></script>
@@ -38,8 +37,9 @@
                 dataType: 'json',
                 type: 'GET',
                 success: function (data) {
+                	// substr(start,length) ë¬¸ìžì—´ ì¶”ì¶œí•¨ìˆ˜
                     var $Icon = (data.weather[0].icon).substr(0, 2);
-                    var $Temp = Math.floor(data.main.temp) + '¡É';
+                    var $Temp = Math.floor(data.main.temp) + 'â„ƒ';
                     var $city = data.name;
                     $('.Curricon').append('<i class="' + weatherIcon[$Icon] + '"></i>');
                     $('.CurrTemp').prepend($Temp);
@@ -56,26 +56,26 @@
   	   <jsp:include page="./include/nav.jsp"></jsp:include>
 	
          
-    <!-- group1 ¿µ¿ª -->
+    <!-- group1 ì˜ì—­ -->
     <section class="setion-group1">
         <div id="h-container">
 
-            <!-- Search ¿µ¿ª -->
+            <!-- Search ì˜ì—­ -->
         
             <div class="main_bg">
                 <div class="main1">
                     <div class="section">
                         <div class="latter-check">
                         	  <div class="in-latter-check">
-                                <label class="check-la"><input ' type="checkbox" class="in-check">´Ü¾î Æ÷ÇÔ
-                                                                    °Ë»ö</label>
+                                <label class="check-la"><input ' type="checkbox" class="in-check">ë‹¨ì–´ í¬í•¨
+                                                                    ê²€ìƒ‰</label>
                             </div>
                         </div>
                         <div class="title-box">
                             <form action="/book-search" method="post">
                                 <label for="" class="in-la"></label>
-                                <input name = "bookName" type="text" placeholder="µµ¼­¸í ¶Ç´Â ÀúÀÚ¸¦ °Ë»öÇÏ¼¼¿ä" class="in-search">
-                                <button>°Ë»ö</button>
+                                <input name = "bookName" type="text" placeholder="ë„ì„œëª… ë˜ëŠ” ì €ìžë¥¼ ê²€ìƒ‰í•˜ì„¸ìš”" class="in-search">
+                                <button>ê²€ìƒ‰</button>
                             </form>
                         </div>
 
@@ -111,7 +111,7 @@
         </div>
     </section>
 
-    <!-- group2 ¿µ¿ª   -->
+    <!-- group2 ì˜ì—­   -->
     <section class = "setion-group2">
         <div class="sec-group">
            <div class="content1">
@@ -151,7 +151,7 @@
 
              <div class="content3">
                  <div class="time-wrap">
-                    <h2>ÇöÀç ½Ã°£</h2>
+                    <h2>í˜„ìž¬ ì‹œê°„</h2>
                  </div>
                     <div id="Clock" class="clock">
                  </div>
@@ -163,18 +163,18 @@
 
 
      
-    <!-- group3 ¿µ¿ª   -->
+    <!-- group3 ì˜ì—­   -->
     <section class = "section-group3">
         <div class = "book-list-zone">
             <ul class = "book-list">
                 <li>
-                    <a href="">ÃßÃµµµ¼­</a>
+                    <a href="">ì¶”ì²œë„ì„œ</a>
                 </li>
                 <li>
-                    <a href="">º£½ºÆ® ¼¿·¯</a>
+                    <a href="">ë² ìŠ¤íŠ¸ ì…€ëŸ¬</a>
                 </li>
                  <li>
-                    <a href="">ÀÎ±âµµ¼­</a>
+                    <a href="">ì¸ê¸°ë„ì„œ</a>
                 </li>
                 <li>
                     <a href="">TOP10</a>
@@ -191,39 +191,39 @@
                                 <img src="https://bookthumb-phinf.pstatic.net/cover/163/581/16358168.jpg" alt="">
                             </a>
                         </span>
-                        <span class = "txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class = "txt">ìš°ì•„í•œ ë°©ì–´ : ìš°ë¦¬ ëª¸ì„ ì§€í‚¤ëŠ” ë©´ì—­ì˜ ë†€ë¼ìš´ ë¹„ë°€</span>
                     </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/581/16358168.jpg" alt="">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/142/619/14261951.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ë‚˜ì˜ ì‚¶ì€ ì„œì„œížˆ ì§„í™”í•´ì™”ë‹¤ : ì°°ìŠ¤ ë‹¤ìœˆ ìžì„œì „</span>
                         </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/581/16358168.jpg" alt="">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/146/520/14652013.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ë ˆì˜¤ë‚˜ë¥´ë„ ë‹¤ë¹ˆì¹˜: ì¸ê°„ ì—­ì‚¬ì˜ ê°€ìž¥ ìœ„ëŒ€í•œ ìƒìƒë ¥ê³¼ ì°½ì˜ë ¥</span>
                         </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/581/16358168.jpg" alt="">
+                                    <img src="https://library.gangnam.go.kr/include/booksearch/image/kdc/noimg.png" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ê°„ë””ìžì„œì „ : ë‚˜ì˜ ì§„ë¦¬ì‹¤í—˜ ì´ì•¼ê¸°</span>
                         </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/581/16358168.jpg" alt="">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/163/557/16355714.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ì•„ì¸ìŠˆíƒ€ì¸ì´ ê´´ë¸ê³¼ í•¨ê»˜ ê±¸ì„ ë•Œ: ì‚¬ê³ ì˜ ì²¨ë‹¨ì„ ì°¾ì•„ ë– ë‚˜ëŠ” ì—¬í–‰</span>
                         </li>
 
                 </ul>
@@ -236,18 +236,18 @@
                     <li>
                         <span class = "cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/144/122/14412268.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/223/038/22303875.jpg" alt="">
                             </a>
                         </span>
-                        <span class = "txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class = "txt">ì•„ë¬´ë„ í”ë“¤ ìˆ˜ ì—†ëŠ” ë‚˜ë¼: í•œ ê¶Œì— ë‹´ì€ ë¬¸ìž¬ì¸ ëŒ€í†µë ¹ ì£¼ìš” ì—°ì„¤ë¬¸ì§‘</span>
                     </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/144/122/14412268.jpg" alt="">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/223/340/22334095.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ìœ„ëŒ€í•œ êµ­ë¯¼ì˜ ë‚˜ë¼: ë¬¸ìž¬ì¸ì •ë¶€ 5ë…„ì˜ ê¸°ë¡</span>
                         </li>
                         <li>
                             <span class="cov">
@@ -255,23 +255,23 @@
                                     <img src="https://bookthumb-phinf.pstatic.net/cover/144/122/14412268.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ì ê²Œìžë„ ê´œì°®ìŠµë‹ˆë‹¤</span>
                         </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/144/122/14412268.jpg" alt="">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/220/348/22034874.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">Go Go ì¹´ì¹´ì˜¤í”„ë Œì¦ˆ: ì„¸ê³„ ì—­ì‚¬ ë¬¸í™” ì²´í—˜ í•™ìŠµë§Œí™”. 23, ì‹±ê°€í¬ë¥´</span>
                         </li>
                         <li>
                             <span class="cov">
                                 <a href="#">
-                                    <img src="https://bookthumb-phinf.pstatic.net/cover/144/122/14412268.jpg" alt="">
+                                    <img src="https://bookthumb-phinf.pstatic.net/cover/219/828/21982883.jpg" alt="">
                                 </a>
                             </span>
-                            <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                            <span class="txt">ë‚˜íƒœí‰ê³¼ ì§„ì§€í•´</span>
                         </li>
 
                 </ul>
@@ -284,42 +284,42 @@
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/164/291/16429192.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/204/734/20473472.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">(ì• ë‹ˆë©”ì´ì…˜ ì½”ë¯¹ë¶)ì—‰ë©ì´ íƒì •. 4</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/164/291/16429192.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/146/335/14633577.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">ê·¸ë¦¬ìŠ¤ ë¡œë§ˆ ì‹ í™”: ë§Œí™”ë¡œ ì½ëŠ” ì´ˆë“± ì¸ë¬¸í•™/ 10; ì˜ì›…ì˜ ì „ì„¤, ì¹´ë“œëª¨ìŠ¤ì˜ ëŒ€ê°€</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/164/291/16429192.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/162/674/16267450.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">ê·¸ë¦¬ìŠ¤ ë¡œë§ˆ ì‹ í™”: ë§Œí™”ë¡œ ì½ëŠ” ì´ˆë“± ì¸ë¬¸í•™. 15, ì‹ ì— ë„ì „í•œ ì¸ê°„ë“¤</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/164/291/16429192.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/142/949/14294930.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">(ì„¤ë¯¼ì„ì˜)í†µì¼ ëŒ€ëª¨í—˜. í•˜: í†µì¼ íŽ¸ : "ì„¤ìŒ¤, í†µì¼ í•œë°˜ë„ê°€ ê¶ê¸ˆí•´ìš”!"</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/164/291/16429192.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/161/214/16121412.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">(ì¹´ì¹´ì˜¤í”„ë Œì¦ˆ)ê³¼í•™íƒì •ë‹¨. 3, ê³µë£¡</span>
                     </li>
             
                 </ul>
@@ -332,42 +332,42 @@
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/156/192/15619225.jpg" alt="">
+                                <img src="https://image.aladin.co.kr/product/26942/84/cover/k582730818_1.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">ë¶ˆíŽ¸í•œ íŽ¸ì˜ì  :ê¹€í˜¸ì—° ìž¥íŽ¸ì†Œì„¤</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/156/192/15619225.jpg" alt="">
+                                <img src="https://image.aladin.co.kr/product/24512/70/cover/k392630952_1.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">ë‹¬ëŸ¬êµ¬íŠ¸ ê¿ˆ ë°±í™”ì .ì´ë¯¸ì˜ˆ ìž¥íŽ¸ì†Œì„¤</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/156/192/15619225.jpg" alt="">
+                                <img src="https://bookthumb-phinf.pstatic.net/cover/134/282/13428208.jpg?type=m1&udate=20180331" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">íŒŒì¹œì½” :ì´ë¯¼ì§„ ìž¥íŽ¸ì†Œì„¤</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/156/192/15619225.jpg" alt="">
+                                <img src="https://image.aladin.co.kr/product/27225/29/cover/k432732398_2.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">ì™„ì „í•œ í–‰ë³µ :ì •ìœ ì • ìž¥íŽ¸ì†Œì„¤</span>
                     </li>
                     <li>
                         <span class="cov">
                             <a href="#">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/156/192/15619225.jpg" alt="">
+                                <img src="https://image.aladin.co.kr/product/27587/47/cover/k962733015_1.jpg" alt="">
                             </a>
                         </span>
-                        <span class="txt">¿ì¾ÆÇÑ ¹æ¾î : ¿ì¸® ¸öÀ» ÁöÅ°´Â ¸é¿ªÀÇ ³î¶ó¿î ºñ¹Ð</span>
+                        <span class="txt">ë‹¬ëŸ¬êµ¬íŠ¸ ê¿ˆ ë°±í™”ì .ì´ë¯¸ì˜ˆ ìž¥íŽ¸ì†Œì„¤</span>
                     </li>
             
                 </ul>
@@ -390,7 +390,7 @@
 
     </section>
 
-    <!-- footer ¿µ¿ª -->
+    <!-- footer ì˜ì—­ -->
     <footer>
 
         <div class = "f-top">
@@ -398,24 +398,24 @@
             <div class = "f-in-list">
                 <ul>
                     <li>
-                        <a href="#">ÀÌ¿ë¾à°ü</a>
+                        <a href="#">ì´ìš©ì•½ê´€</a>
                     </li>
                     <li>
                         <a href="#">
                             <span>
-                                °³ÀÎÁ¤º¸Ã³¸®¹æÄ§
+                                ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">ÀúÀÛ±Çº¸È£Á¤Ã¥</a>
+                        <a href="#">ì €ìž‘ê¶Œë³´í˜¸ì •ì±…</a>
                     </li>
                 </ul>
             </div>
          </div>
         </div>
 
-        <!-- À§·ÎÀÌµ¿ ¹öÆ° -->
+        <!-- ìœ„ë¡œì´ë™ ë²„íŠ¼ -->
         <div class = "f-bootom">
             <div class = "btn-wrap">
                 <a href="#">

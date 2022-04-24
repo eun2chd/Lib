@@ -14,9 +14,9 @@
 	
 	</select>
 	
-	<select id="getBookList" resultType="com.example.demo.web.dto.bookList">
+	<select id="getBookList" resultType="com.example.demo.domain.book.BookBoard">
 
-	 SELECT 
+	  SELECT 
  		REG_NO,
  		LOCATION,
  		REF_ROOM,
@@ -24,10 +24,11 @@
  		AUTHOR,
  		PUBLISHER,
  		YR_PUBLICATION
-	 FROM
+	  FROM
 		TB_LIBRARY 
+  	  LIMIT ${start}, ${end}
 		
-	</select>
+	</select> 
 	
 	
 	

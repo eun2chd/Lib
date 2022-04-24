@@ -4,7 +4,7 @@ body {
 
 #section-container {
     width: 100%;
-    height: 640px;
+    height: 800px;
 
 }
 
@@ -101,7 +101,7 @@ body {
     display: inline-block;
 }
 
-/* 而⑦뀗痢� �쁺�뿭 */
+
 .content {
     width: 78%;
     float: left;
@@ -139,6 +139,11 @@ table {
 }
 table,td,td {
     border-collapse: collapse;
+    text-align : center;
+}
+td {
+    padding : 5px;
+    border: 1px solid #e2e2e2;
 }
 
 .book-list th {
