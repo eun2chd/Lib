@@ -210,7 +210,7 @@ body {
 }
 .book-list-zone .book-list {
     height: 54px;
-    padding : 10px 20px;
+    padding : 15px 20px;
     border-bottom: 1px solid #e3e3e3;
 }
 .book-list-zone .book-list > li {

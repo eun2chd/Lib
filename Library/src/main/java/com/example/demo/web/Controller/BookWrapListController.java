@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.domain.book.BookBoard;
 import com.example.demo.domain.book.Pagezing;
 import com.example.demo.domain.user.BookInfoRepository;
+import com.example.demo.service.BookBoardService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,24 +22,36 @@ import lombok.RequiredArgsConstructor;
 public class BookWrapListController {
 	
 	private final BookInfoRepository bookInfoRepository;
-	
+	private final BookBoardService bookBoardService;
 	
 //	쿼리스트링은 소문자로 써야한다. 안그럼 값이 안담아짐 ;; 삽질의 결과
 	@GetMapping("/booklist")
 	public String WrapBookListForm(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int Page) {
+			
+			bookBoardService.BoardPagzing(Page);
+			Pagezing Pag = new Pagezing();
 		
 			
-		
-			int startIndex = (Page - 1) * 12;
-			int endindex = Page * 12;
+			Pag.StartPageNum(Page);
+			Pag.EndPageNum();
+			
+			System.out.println("시작 페이지 : " + Pag.StartPageNum(Page));
+			System.out.println("끝 페이지 : " + Pag.EndPageNum());
+			
+			
+			System.out.println(Pag.TotalPage(bookInfoRepository.bookListTotalCount()));
+//			한페이지에 나올 List 책정보 갯수 [ 한 페이지당 몇개의 책 리스트를 보여줄건지 정함 ] 
+			int startIndex = (Page - 1) * 14;
+			int endindex = Page * 14;
 			
 		
-			
-				
+			// db 데이터에 Limit 로 갯수를 조회하기위해서 시작번호와 끝번호를 넘겨줌
 			List<BookBoard> bookBoardslist = bookInfoRepository.getBookList(startIndex, endindex);
 		
-
+			// 책정보 db 전체 데이터 갯수를 구함
 			int boardAll = bookInfoRepository.bookListTotalCount();	
+			
+			System.out.println("책 개수 입니다 : " + boardAll);
 			
 			System.out.println(boardAll);
 			
@@ -49,9 +62,8 @@ public class BookWrapListController {
 			}
 			
 			model.addAttribute("list", boardList);
+			model.addAttribute("pagelist", Pag);
 			
-			
-		
 			
 		return "/book/booklist";
 	}

@@ -37,24 +37,9 @@
 		</div>
 		<div class="show-book">
 			<div class="show-book-in">
-				<h3>초성으로 검색하기</h3>
+				<h3>책제목을 클릭해서 대출가능 및 나의 관심도서에 넣어보세요!</h3>
 			</div>
-			<div class="con-search">
-				<div>ㄱ</div>
-				<div>ㄴ</div>
-				<div>ㄷ</div>
-				<div>ㄹ</div>
-				<div>ㅁ</div>
-				<div>ㅂ</div>
-				<div>ㅅ</div>
-				<div>ㅇ</div>
-				<div>ㅈ</div>
-				<div>ㅊ</div>
-				<div>ㅋ</div>
-				<div>ㅌ</div>
-				<div>ㅍ</div>
-				<div>ㅎ</div>
-			</div>
+			
 
 			<div class="con-book-list">
 				<c:forEach var="book" items="${list }">
@@ -93,15 +78,20 @@
 
 			<div class="bar-btns">
 				<div class="page_nation">
-     		  <a class="arrow pprev" href="#"></a>
-     	      <a class="arrow prev" href="#"></a>
+     		  <a class="arrow pprev" href="/book/booklist?page = 1"></a>
+     	      <a class="arrow prev" href="/book/booklist?page=${pagelist.currentPage -1 }"></a>
      	      
-     	      <c:forEach var = "page"  begin = "1" end = "10" >
+     	      <!-- page 라는 변수가 1 ~ 10끼지 반복해서 출력을 해줍니다. -->
+     	      <!-- 내가 처리해야할 것
+     	      	  시작페이지 부터 끝페이지를 받아와야함.
+     	      
+     	       -->
+     	      <c:forEach begin = "${pagelist.startPage }" end = "${pagelist.endPage }" var = "page" >
      	      		 <a href="/book/booklist?page=${page }" class="active">${page }</a>
      	      </c:forEach>
      	      
-    		  <a class="arrow next" href="#"></a>
-    		  <a class="arrow nnext" href="#"></a>
+    		  <a class="arrow next" href="/book/booklist?page=${pagelist.currentPage + 1 }"></a>
+    		  <a class="arrow nnext" href="/book/booklist?page=${pagelist.totalPage }"></a>
  			   </div>
 			</div>
 
