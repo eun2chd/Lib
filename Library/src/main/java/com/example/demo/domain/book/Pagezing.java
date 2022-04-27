@@ -27,7 +27,7 @@ public class Pagezing {
 		if(this.totalPage % BookBoardNumber > 0) {
 			totalPage++;
 		}
-		
+			
 		return this.totalPage;
 	}
 	
@@ -42,6 +42,11 @@ public class Pagezing {
 	// 끝 페이지 구하기
 	public int EndPageNum() {
 		endPage = (startPage + GroupPage) - 1;
+		
+		if(totalPage < endPage) {
+			endPage = totalPage;
+		}
+		
 		return endPage;
 	}
 	

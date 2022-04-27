@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class BookBoard {
 	
-	private String REG_NO;
+	private String KEYS_NUM;
 	private String BOOK_NAME;
 	private String AUTHOR;
 	private String PUBLISHER;
