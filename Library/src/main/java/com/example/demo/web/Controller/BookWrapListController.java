@@ -37,6 +37,7 @@ public class BookWrapListController {
 		
 			Pag.StartPageNum(Page);
 			Pag.EndPageNum();
+			System.out.println(Pag.getCurrentPage());
 			
 			if(Page > totalPage) {
 				Page = totalPage;
