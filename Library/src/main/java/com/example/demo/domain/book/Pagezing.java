@@ -19,6 +19,9 @@ public class Pagezing {
 	// 현재 페이지
 	private int currentPage;
 	
+	private boolean next;
+	private boolean prev;
+	
 	// 총 나와야할 페이지 수
 	public int TotalPage(int totalCount) {
 		
@@ -49,6 +52,21 @@ public class Pagezing {
 		return endPage;
 	}
 	
+	// 이전 페이지 활성화 여부
+	public boolean pagePrev() {
 		
-		
+		prev = startPage == 1 ? false : true;
+
+		return prev;
+
+	}
+	// 다음 페이지 활성화 여부
+	public boolean pageNext(int totalCount) {
+	
+
+		next = endPage * BookBoardNumber >= totalCount ? false : true;
+		return next;
+	}
+	
+
 }

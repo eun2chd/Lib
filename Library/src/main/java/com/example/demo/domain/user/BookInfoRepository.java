@@ -13,7 +13,7 @@ import com.example.demo.domain.book.Pagezing;
 public interface BookInfoRepository {
 	
 	// 책정보 목록을 list로 담아오기
-	public List<BookBoard> getBookList(int start);
+	public List<BookBoard> getBookList();
 	// 책정보 테이블 총 갯수
 	public int bookListTotalCount();
 
