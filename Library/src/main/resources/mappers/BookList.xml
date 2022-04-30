@@ -10,14 +10,14 @@
 	SELECT 
 		COUNT(*)
 	FROM
-		TB_LIBRARY
+		TB_LIB
 	
 	</select>
 	
 	<select id="getBookList" resultType="com.example.demo.domain.book.BookBoard">
 
-	  SELECT 
- 		REG_NO,
+  	   SELECT 
+ 		KEY_NUM,
  		LOCATION,
  		REF_ROOM,
  		BOOK_NAME,
@@ -25,8 +25,8 @@
  		PUBLISHER,
  		YR_PUBLICATION
 	  FROM
-		TB_LIBRARY 
-  	  LIMIT ${start}, ${end}
+		TB_LIB 
+  	  LIMIT ${start}, 10
 		
 	</select> 
 	

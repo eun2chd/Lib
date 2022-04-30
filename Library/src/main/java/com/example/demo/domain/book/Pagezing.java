@@ -7,8 +7,8 @@ public class Pagezing {
 	
 	// 시작페이지 
 	private int startPage;
-	// 끝페이지
-	private int endPage;
+	// 페이지당 출력할 갯수
+	private int endPage = 10;
 	// 총 페이지 수 
 	private int totalPage;
 	
@@ -38,12 +38,12 @@ public class Pagezing {
 		return this.startPage;
 	}
 	
-	
 	// 끝 페이지 구하기
 	public int EndPageNum() {
 		endPage = (startPage + GroupPage) - 1;
 		return endPage;
 	}
 	
+		
 		
 }
