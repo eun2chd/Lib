@@ -25,9 +25,7 @@
  		PUBLISHER,
  		YR_PUBLICATION
 	  FROM
-		TB_LIB 
-  	  LIMIT ${start}, 10
-		
+		TB_LIB	
 	</select> 
 	
 	

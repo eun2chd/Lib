@@ -26,29 +26,39 @@ public class BookWrapListController {
 	@GetMapping("/booklist")
 	public String WrapBookListForm(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int Page) {
 		
-			
+
 			Pagezing Pag = new Pagezing();
+			int totalPage = Pag.TotalPage(bookInfoRepository.bookListTotalCount());
 		
-			
 			Pag.StartPageNum(Page);
 			Pag.EndPageNum();
+
 			Pag.TotalPage(bookInfoRepository.bookListTotalCount());
 			
+		
+			System.out.println(Pag.getCurrentPage());
 			
+			if(Page > totalPage) {
+				Page = totalPage;
+			}
+			
+		
 //			한페이지에 나올 List 책정보 갯수 [ 한 페이지당 몇개의 책 리스트를 보여줄건지 정함 ] 
 			int startIndex = (Page - 1) * 14;
 			int endindex = Page * 14;
 			
 		
 			// db 데이터에 Limit 로 갯수를 조회하기위해서 시작번호와 끝번호를 넘겨줌
+			// 일단 코드 수정 할것 Limit로 안들고 와도 될거같음
 			List<BookBoard> bookBoardslist = bookInfoRepository.getBookList(startIndex);
-			
-//			System.out.println(bookBoardslist);
 		
 			// 책정보 db 전체 데이터 갯수를 구함
-		
-	
+			int boardAll = bookInfoRepository.bookListTotalCount();	
 			
+			
+			
+			List<BookBoard> boardList = new ArrayList<BookBoard>();
+
 //			List<BookBoard> boardList = new ArrayList<BookBoard>();
 						
 			
