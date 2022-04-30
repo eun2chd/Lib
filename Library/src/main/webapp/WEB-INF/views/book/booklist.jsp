@@ -91,9 +91,9 @@
      	       -->
 					<c:forEach begin="${pagelist.startPage }"
 						end="${pagelist.endPage }" var="page">
-						<li>
+				
 							<a href="/book/booklist?page=${page }" class="active">${page }</a>
-						</li>
+					
 					</c:forEach>
 
 					<a class="arrow next"
@@ -136,24 +136,7 @@
 
 </body>
 
-<script type="text/javascript">
-	$(function() {
 
-		$(".page_nation > li").eq(0).addClass("on");
-
-		$(".page_nation > a").click(function(e) {
-			e.preventDefault();
-			var i = $(this).index();
-
-			console.log(i);
-
-			$(".page_nation > li").removeClass("on");
-			$(this).addClass("on");
-
-		});
-
-	});
-</script>
 
 
 </html>
