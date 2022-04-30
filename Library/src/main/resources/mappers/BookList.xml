@@ -16,7 +16,7 @@
 	
 	<select id="getBookList" resultType="com.example.demo.domain.book.BookBoard">
 
-	  SELECT 
+  	   SELECT 
  		KEY_NUM,
  		LOCATION,
  		REF_ROOM,

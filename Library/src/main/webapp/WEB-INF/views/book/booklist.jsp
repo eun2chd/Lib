@@ -48,8 +48,7 @@
 					<div class="sub">
 						<div class="sub-left">
 							<a href="#"> <img
-								src="https://image.aladin.co.kr/product/26987/37/cover/k962730610_1.jpg"
-								alt="">
+								src="../image/ready_img.png" alt="이미지 준비중">
 							</a>
 						</div>
 						<div class="sub-box-left">
@@ -75,31 +74,30 @@
 						</div>
 					</div>
 				</c:forEach>
-
+			
 			</div>
 
 			<div class="bar-btns">
 				<div class="page_nation">
-					<a class="arrow pprev" href="/book/booklist?page = 1"></a> <a
-						class="arrow prev"
-						href="/book/booklist?page=${pagelist.currentPage -1 }"></a>
-
-					<!-- page 라는 변수가 1 ~ 10끼지 반복해서 출력을 해줍니다. -->
-					<!-- 내가 처리해야할 것
-     	      	  시작페이지 부터 끝페이지를 받아와야함.
-     	      
-     	       -->
-					<c:forEach begin="${pagelist.startPage }"
-						end="${pagelist.endPage }" var="page">
-				
-							<a href="/book/booklist?page=${page }" class="active">${page }</a>
+					<c:if test="${pagelist.prev}">
+							<a class="arrow pprev" href="/book/booklist?page = 1"></a>
+							<a class="arrow prev" href="/book/booklist?page=${pagelist.currentPage -1 }"></a>
+					  </c:if>
+						
+						
+						
+					<c:forEach begin="${pagelist.startPage }" end ="${pagelist.endPage }" var="page">
+						
+							<li><a href="/book/booklist?page=${page }" class="">${page }</a></li>
 					
 					</c:forEach>
+					
+						<c:if test="${pagelist.next}">
+							<a class="arrow next" href="/book/booklist?page=${pagelist.currentPage + 1 }"></a>
+				    		<a class="arrow nnext" href="/book/booklist?page=${pagelist.totalPage }"></a>
+						</c:if>
 
-					<a class="arrow next"
-						href="/book/booklist?page=${pagelist.currentPage + 1 }"></a> <a
-						class="arrow nnext"
-						href="/book/booklist?page=${pagelist.totalPage }"></a>
+		
 				</div>
 			</div>
 
@@ -109,10 +107,6 @@
 
 
 	</div>
-
-
-
-
 
 
 	<!-- footer 영역 -->
@@ -136,6 +130,20 @@
 
 </body>
 
+
+<script type="text/javascript">
+	var i = ${pagelist.currentPage - pagelist.startPage };
+	var totalPage = ${pagelist.totalPage - pagelist.startPage}
+	
+	if(i > totalPage) {
+		i = totalPage
+	}
+	
+	$(function() {
+		$(".page_nation > li  a").eq(i).addClass("active");
+		
+	});
+</script>
 
 
 
