@@ -45,6 +45,7 @@ public class BookWrapListController {
 			BookPage.pageNext(totalCount);
 			
 
+		
 
 			model.addAttribute("list", boardList);
 			model.addAttribute("pagelist", BookPage);

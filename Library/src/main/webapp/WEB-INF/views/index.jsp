@@ -20,7 +20,26 @@
         crossorigin="anonymous"></script>
         
           <script>
+
         $(document).ready(function () {
+        	
+        	$('#main-search-btn').on('click', function() {
+        		if($('input#key-search').val() == '') {
+        			alert('검색어를 입력하세요');
+        			$('input#key-search').focus();
+        			return false;
+        		}
+        		
+        		$('#searchForm').submit();
+        		
+        	
+        	});
+        	
+     
+            
+        
+        	
+        	
             let weatherIcon = {
                 '01': 'fas fa-sun',
                 '02': 'fas fa-cloud-sun',
@@ -47,6 +66,11 @@
                 }
             })
         });
+        
+        
+     
+        
+        
     </script>
 
 </head>
@@ -72,10 +96,10 @@
                             </div>
                         </div>
                         <div class="title-box">
-                            <form action="/book-search" method="post">
+                            <form  id ="searchForm"  action="/book-search" method="post">
                                 <label for="" class="in-la"></label>
-                                <input name = "bookName" type="text" placeholder="도서명 또는 저자를 검색하세요" class="in-search">
-                                <button>검색</button>
+                                <input id = "key-search" name = "keyword" type="text" placeholder="도서명 또는 저자를 검색하세요" class="in-search">
+                                <button id = "main-search-btn">검색</button>
                             </form>
                         </div>
 

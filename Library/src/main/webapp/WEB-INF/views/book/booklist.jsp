@@ -47,9 +47,21 @@
 				<c:forEach var="book" items="${list }">
 					<div class="sub">
 						<div class="sub-left">
-							<a href="#"> <img
-								src="../image/ready_img.png" alt="이미지 준비중">
-							</a>
+						<c:choose>
+							<c:when test="${empty book.BOOK_IMG }">
+								<a href="#"> <img src="../image/ready_img.png" alt="이미지 준비중">	</a>
+							</c:when>
+							
+							<c:otherwise>
+										<a href="#"> <img src="${book.BOOK_IMG }" alt="이미지 준비중">	</a>
+							</c:otherwise>
+								
+							
+						</c:choose>
+							
+								
+						
+						
 						</div>
 						<div class="sub-box-left">
 							<div class="sub-item">

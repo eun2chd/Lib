@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.book.BookBoard;
+import com.example.demo.domain.book.BookSearch;
 import com.example.demo.domain.book.Pagezing;
 import com.example.demo.domain.user.BookInfoRepository;
-import com.example.demo.web.dto.BookInfo.BookRespDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -53,6 +53,25 @@ public class bookBoardServiceImpl implements BookBoardService{
 		
 		
 		return boardList;
+	}
+
+	@Override
+	public List<BookSearch> getBookSearch(String keyword) {
+		// TODO Auto-generated method stub
+		
+		List<BookSearch> BookSearchList = bookInfoRepository.getBookSearchList(keyword);
+		
+		int BookTotalSize = BookSearchList.size();
+		
+		List<BookSearch> BookSearchBoard = new ArrayList<BookSearch>();
+		
+	
+		
+		for(int i = 0; i < BookTotalSize; i ++) {
+			BookSearchBoard.add(BookSearchList.get(i));
+		}
+		
+		return BookSearchBoard;
 	}
 
 	

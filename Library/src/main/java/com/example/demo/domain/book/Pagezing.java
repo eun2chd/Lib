@@ -1,10 +1,17 @@
 package com.example.demo.domain.book;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+
 
 @Data
 public class Pagezing {
 	
+//	검색영역
+	private String keyword;
+	
+
+//	
 	// 시작페이지 
 	private int startPage;
 	// 페이지당 출력할 갯수
@@ -12,12 +19,15 @@ public class Pagezing {
 	// 총 페이지 수 
 	private int totalPage;
 	
+	private int total;
+	
 	// 한페이지에 나올 데이터수
 	private int BookBoardNumber = 14;
 	// 한 그룹에 나올 페이지수
 	private int GroupPage = 10;
 	// 현재 페이지
 	private int currentPage;
+	
 	
 	private boolean next;
 	private boolean prev;
@@ -68,5 +78,19 @@ public class Pagezing {
 		return next;
 	}
 	
+//	검색한 이름 넘겨주기
+	public String BookName(String keyword) {
+		
+		this.keyword = keyword;
+		
+		return this.keyword;
+		
+	}
+	
+	public int BookSearchTotal(int totalCount) {
+		return this.total = totalCount;
+	}
+
+
 
 }

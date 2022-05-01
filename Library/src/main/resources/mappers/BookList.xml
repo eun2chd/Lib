@@ -5,6 +5,7 @@
 
 <mapper namespace="com.example.demo.domain.user.BookInfoRepository">
 
+	<!-- 책 리스트 총 갯수 조회 쿼리 -->
 	<select id="bookListTotalCount" parameterType="com.example.demo.domain.user.BookInfoRepository"  resultType="integer">
 
 	SELECT 
@@ -14,6 +15,7 @@
 	
 	</select>
 	
+	<!-- 책 정보 조회 쿼리 -->
 	<select id="getBookList" resultType="com.example.demo.domain.book.BookBoard">
 
   	   SELECT 
@@ -23,11 +25,38 @@
  		BOOK_NAME,
  		AUTHOR,
  		PUBLISHER,
+ 		BOOK_IMG,
  		YR_PUBLICATION
 	  FROM
 		TB_LIB	
 	</select> 
 	
+	<!-- 사용자가 검색한 책 정보 조회 -->
+	<select id="getBookSearchList" resultType="com.example.demo.domain.book.BookSearch">
+		 SELECT 
+   			BOOK_NAME,
+   			AUTHOR,
+   			PUBLISHER,
+ 			LOCATION,
+ 			CALL_SIGN
+		FROM
+			TB_LIB
+		WHERE
+			BOOK_NAME LIKE CONCAT('%',#{keyword}, '%');
+
+	</select>
+	
+	<!-- 사용자가 검색한 책 갯수 -->
+	<select id="bookSearchTotalCount" parameterType="com.example.demo.domain.user.BookInfoRepository"  resultType="integer">
+
+	SELECT 
+		COUNT(*)
+	FROM
+		TB_LIB
+	WHERE
+		BOOK_NAME LIKE CONCAT('%',#{keyword}, '%');
+	
+	</select>
 	
 	
 

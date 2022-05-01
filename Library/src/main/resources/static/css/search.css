@@ -4,7 +4,7 @@ body {
 
 #section-container {
     width: 100%;
-    height: 1500px;
+    height: 4800px;
 
 }
 
@@ -66,6 +66,15 @@ body {
     width: 100%;
     margin-bottom: 30px;
 }
+
+.show-search-view .view-search-findresult {
+	
+	font-size: 2.3rem;
+    font-family: initial;
+    font-weight: 400;
+    
+}
+
 .show-search .show-search-in {
     width: 1000px;
     margin: 0 auto;
@@ -84,6 +93,14 @@ body {
     border-top: 1px dashed #ddd;
 }
 
+.show-search-view .view-content {
+	
+	font-size : 1.8rem;
+	font-weight: 500;
+	font-family: sans-serif; 
+}
+	
+	
 .search-input {
     width: 1000px;
     margin: 0 auto;
@@ -101,7 +118,7 @@ body {
     text-indent: 10px;
     font-size: 20px;
 }
-.search-input a {
+.search-input button {
     position: absolute;
     top: 174px;
     right: 320px;
@@ -111,6 +128,8 @@ body {
     text-align: center;
     line-height: 68px;
     background-color: rgb(17, 6, 80);
+    color : #fff;
+	cursor: pointer;
 }
 
 .search-box {
@@ -188,9 +207,18 @@ input[type = "checkbox"] {
     top : -40px;
     left: 17px;
     display: inline-block;
-    width: 600px;
+    width: 630px;
     line-height: 150%;
 }
+
+.book-clip .book-name {
+	font-size: 1.5rem;
+    position: relative;
+    top: -8px;
+    color: #010e4d;
+    font-weight: 500;
+}
+
 .brow-book-view {
     position: relative;
     top: -47px;

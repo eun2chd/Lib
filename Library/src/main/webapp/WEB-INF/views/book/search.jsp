@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +17,21 @@
     
     <script type="text/javascript">
 		$(document).ready(function() {
+			
+			$('#main-search-btn').on('click', function() {
+        		if($('input#key-search').val() == '') {
+        			alert('검색어를 입력하세요');
+        			$('input#key-search').focus();
+        			return false;
+        		}
+        		
+        		$('#searchForm').submit();
+        		
+        	
+        	});
+        	
+			
+			
 			$("#cbx_chkAll").click(function() {
 				if($("#cbx_chkAll").is(":checked")) $("input[name=chk]").prop("checked", true);
 				else $("input[name=chk]").prop("checked", false);
@@ -58,42 +76,59 @@
 
             <div class = "search-input">
                 <span class = "search-key">
-                    <input type="text" placeholder="검색어를 입력하세요">
+                  <form action="/book-search" method="post">
+                    <input id = "key-search"  name = "keyword" type="text" placeholder="검색어를 입력하세요">
+             		<button id = "main-search-btn">검색</button>
+             	  </form>
                 </span>
-                <a href="#">검색</a>
+                	
             </div>
-
-            <div class = "show-search-view" style="display: none;">
-                <p>검색결과가 없습니다.</p>
-            </div>
-            <div class = "show-search-view"  >
-                <p>?? 에 대한 검색 결과가 1건 있습니다.</p>
-
+	
+		<c:choose>
+		
+			<c:when test="${empty Serch }">
+				    <div class = "show-search-view">
+                		<p class = "view-search-findresult">검색결과가 없습니다. <br>"${bookSerch.keyword }" 에 대한 결과는 총 "${bookSerch.total }" 건 있습니다.</p>
+         		   </div> 
+			</c:when>
+			
+			<c:otherwise>
+			
+				   	 <!-- 관심자료 도서바로가기 start  -->
+            <div class = "show-search-view" >
+                <p><span class = "view-content">"${bookSerch.keyword }"</span> 에 대한 검색 결과가 <span class = "view-content">"${bookSerch.total }"</span>건 있습니다.</p>
+         
                 <div class ="search-header">
                     <div class = "btns-save">
                         <span class = "btn-check">
                             <input type="checkbox" id = "cbx_chkAll" title="전체목록 선택" name = "tt">
                         </span>
                         <a href="#" class = "button put">관심자료 담기</a>
-                        <a href="./myinterest.html" class = "button move">나의 관심도서 바로가기</a>
+                        <a href="user/myinter" class = "button move">나의 관심도서 바로가기</a>
                     </div> 
                 </div>
+                
+               <!-- 관심자료 도서바로가기 end  -->
+                
+		<!-- 책정보 Start-->
+
                 <ul class ="book-result">
+              	   <c:forEach var = "book" items = "${Serch }">
                     <li>
                         <span class = "chk">
                             <input type="checkbox" title="선택" name = "chk">
                         </span>
                         <div class="thmb">
                             <span class = "book-cover-img">
-                                <img src="https://bookthumb-phinf.pstatic.net/cover/073/828/07382834.jpg" alt="">
+                                <img src="/image/ready_img.png" alt="">
                             </span>
                         </div>
                         <div class = "book-clip">
-                            <p>도서 : java 프로그래밍</p>
-                            <p>저자 : test</p>
-                            <p>출판사 : test</p>
-                            <p>도서관 : test</p>
-                            <p>코드 : 00001480599T</p>
+                            <p class = "book-name">제목 : "${book.BOOK_NAME }"</p>
+                            <p>저자 : "${book.AUTHOR }"</p>
+                            <p>출판사 : "${book.PUBLISHER }"</p>
+                            <p>도서관 : "${book.LOCATION }"</p>
+                            <p>코드 : "${book.CALL_SIGN }"</p>
                         </div>
                         <div class = "brow-book-view">
                             <span>
@@ -107,9 +142,21 @@
                             </div>
                         </div>
                     </li>
+                    
+                       </c:forEach> 
+                    
                 </ul>
                    
             </div>
+          
+
+        <!-- 책정보 END-->
+			
+			</c:otherwise>
+		
+		</c:choose>
+	
+             
         </div>
     </div>
 
@@ -145,5 +192,7 @@
         </footer>
 
 </body>
+
+
 
 </html>
