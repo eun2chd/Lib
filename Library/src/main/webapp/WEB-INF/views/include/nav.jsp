@@ -28,21 +28,22 @@
     <div id="container">
         <!-- 헤더 영역 -->
         <header id="header">
+        	
+        	<!-- 헤더안 컨테이너  -->
             <div class="container">
-
                 <div class="left-util">
                     <ul>
                         <li><a href="/">Library</a></li>
                     </ul>
                 </div>
 
-
+			<!-- 로그인 폼 -->
                 <div class="right-util">
                     <ul>
                     <c:choose>
                     	<c:when test="${empty principal.user }">
                     		 <li class = "sign-in"><a href="/auth/signin">로그인</a></li>
-                      		 <li> <a href="#">회원가입</a></li>
+                      		 <li> <a href="/auth/signup-terms">회원가입</a></li>
                        
                        		 <!-- 내서재 클릭시 로그인 페이지 이동 -->
                       		 <li><a href="/user/myLib" class="lib">내 서재</a></li>
@@ -56,8 +57,13 @@
                     </c:choose>
                     </ul>
                 </div>
+                <!-- 로그인 폼  end -->
+                
             </div>
+            <!-- 헤더안 컨테이너  end  -->           
         </header>
+        
+        
          <!-- header nav 메뉴 -->
             <div class="g-menu">
                 <ul class="navbar">
@@ -82,12 +88,7 @@
         </header>
         <!-- end conatiner -->
     </div>
-   </div>
-
-
-
-
-
+ 
 
 </body>
 

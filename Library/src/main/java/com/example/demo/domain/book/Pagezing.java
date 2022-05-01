@@ -21,8 +21,13 @@ public class Pagezing {
 	
 	private int total;
 	
-	// 한페이지에 나올 데이터수
+	// booklist 나올 데이터수
 	private int BookBoardNumber = 14;
+
+//	검색페이지에 나올 데이터수
+	private int BookSearchBoard = 10;
+	
+	
 	// 한 그룹에 나올 페이지수
 	private int GroupPage = 10;
 	// 현재 페이지
@@ -32,17 +37,32 @@ public class Pagezing {
 	private boolean next;
 	private boolean prev;
 	
-	// 총 나와야할 페이지 수
+	// 총 나와야할 페이지 수  ( 한페이지에 14개 그룹 )
 	public int TotalPage(int totalCount) {
 		
 		this.totalPage = totalCount / BookBoardNumber;
 		
-		if(this.totalPage % BookBoardNumber > 0) {
+		if(totalCount % BookBoardNumber > 0) {
 			totalPage++;
 		}
-			
+
 		return this.totalPage;
 	}
+	
+//	총 나와야할 페이지 수 ( 한페이지에 10개 그룹 )
+	public int SearchTotal(int totalCount) {
+		
+		this.totalPage = totalCount / BookSearchBoard;
+
+
+		if(totalCount % BookSearchBoard > 0) {
+			totalPage++;
+		}
+	
+		return this.totalPage;
+		
+	}
+
 	
 	// 시작 페이지 구하기 ( 현재 페이지 값을 받아서 계산함)
 	public int StartPageNum(int page) {

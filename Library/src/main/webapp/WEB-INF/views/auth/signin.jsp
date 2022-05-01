@@ -94,17 +94,8 @@
 
       </section>
 
-
-
-
-
-
 <!-- end container -->
     </div>
-
-
-
-
 
 
 </body>

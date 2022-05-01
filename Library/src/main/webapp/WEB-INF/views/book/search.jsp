@@ -13,6 +13,7 @@
     <title>내 서재</title>
     <link rel="shortcut icon" href="/image/icon.png">
     <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/pagebuttons.css">    
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     
     <script type="text/javascript">
@@ -76,7 +77,7 @@
 
             <div class = "search-input">
                 <span class = "search-key">
-                  <form action="/book-search" method="post">
+                  <form action="/book-search" method="get">
                     <input id = "key-search"  name = "keyword" type="text" placeholder="검색어를 입력하세요">
              		<button id = "main-search-btn">검색</button>
              	  </form>
@@ -142,10 +143,28 @@
                             </div>
                         </div>
                     </li>
-                    
-                       </c:forEach> 
-                    
+                 </c:forEach>             
                 </ul>
+                
+            <div class="bar-btns">
+				<div class="page_nation">
+				<c:if test="${bookSerch.prev }">
+							<a class="arrow pprev" href="1"></a>
+							<a class="arrow prev" href="/book-search?page=${bookSerch.currentPage - 1 }"></a>
+				</c:if>
+						<c:forEach begin = "${bookSerch.startPage }" end = "${bookSerch.endPage }" var = "page">
+							<li><a href="/book-search?keyword=${bookSerch.keyword }&page=${page}" class="">${page }</a></li>				
+						</c:forEach>
+						
+					<c:if test="${bookSerch.next }">
+						<a class="arrow next" href="/book-search?page=${bookSerch.currentPage + 1 }"></a>
+				    	<a class="arrow nnext" href="/book-search?page=${bookSerch.totalPage + 1 }"></a>
+					</c:if>
+						
+			
+				</div>
+			</div>
+                
                    
             </div>
           
@@ -192,7 +211,19 @@
         </footer>
 
 </body>
-
+<script type="text/javascript">
+	var i = ${bookSerch.currentPage - bookSerch.startPage };
+	var totalPage = ${bookSerch.totalPage - bookSerch.startPage}
+	
+	if(i > totalPage) {
+		i = totalPage
+	}
+	
+	$(function() {
+		$(".page_nation > li  a").eq(i).addClass("active");
+		
+	});
+</script>
 
 
 </html>

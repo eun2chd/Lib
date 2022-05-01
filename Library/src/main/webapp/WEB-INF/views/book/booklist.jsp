@@ -13,6 +13,7 @@
 <title>내 서재</title>
 <link rel="shortcut icon" href="./images/icon.png">
 <link rel="stylesheet" href="/css/booklist.css">
+<link rel="stylesheet" href="/css/pagebuttons.css">    
 <script src="/js/jquery.js"></script>
 
 

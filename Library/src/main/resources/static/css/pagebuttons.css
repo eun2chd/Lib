@@ -1,0 +1,63 @@
+/* 페이징 버튼 처리 */
+.bar-btns{
+    position: relative;
+    top: 14px;
+    text-align: center;
+    
+}
+.bar-btns a{
+    color : #000;
+}
+
+.page_nation {
+	display:inline-block;
+}
+.page_nation .none {
+	display:none;
+}
+.page_nation a {
+	display:block;
+	margin:0 3px;
+	float:left;
+	border:1px solid #e6e6e6;
+	width:60px;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	background-color:#ebe6e6;
+	font-size:19px;
+	color:#999999;
+	text-decoration:none;
+}
+.page_nation .arrow {
+	border:1px solid #ccc;
+}
+.page_nation .pprev {
+	background:#f8f8f8 url("/image/button/page_pprev.png") no-repeat center center;
+	margin-left:0;
+}
+.page_nation .prev {
+	background:#f8f8f8 url("/image/button/page_prev.png") no-repeat center center;
+	margin-right:7px;
+}
+.page_nation .next {
+	background:#f8f8f8 url("/image/button/page_next.png") no-repeat center center;
+	margin-left:7px;
+}
+.page_nation .nnext {
+	background:#f8f8f8 url("/image/button/page_nnext.png") no-repeat center center;
+	margin-right:0;
+}
+
+.page_nation li {
+	float :left;
+}
+
+ .page_nation a.active {
+	background-color:#42454c;
+	color:#fff;
+	border:1px solid #42454c;
+} 
+
+
+/*  */

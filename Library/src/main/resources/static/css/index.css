@@ -138,19 +138,6 @@ body {
     cursor: pointer;
 }
 
-.in-latter-check {
-    width: 800px;
-    margin: 0 auto;
-    text-align: right;
-}
-
-.section .check-la {
-    display: inline;
-    line-height: 30px;
-    padding : 10px;
-    font-size: 14px;
-    font-weight: 900;
-}
 /* end search */
 
 /* section-group2 */

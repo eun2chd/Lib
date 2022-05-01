@@ -20,6 +20,7 @@ public class User {
 		private String userprovider;
 		private String userRole;
 		private String oauth2_username;
+		private String addr;
 		
 		private LocalDateTime create_date;
 		private LocalDateTime update_date;

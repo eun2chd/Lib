@@ -14,6 +14,7 @@ public class oAuth2UserDto {
 	private String name;
 	private String provider;
 	private String role;
+	private String addr;
 	
 	public User toEntity() {
 		return User.builder()
@@ -23,6 +24,7 @@ public class oAuth2UserDto {
 				.username(name)	
 			    .userRole(role)
 			    .userprovider(provider)
+			    .addr(addr)
 			    .build();
 	}
 	

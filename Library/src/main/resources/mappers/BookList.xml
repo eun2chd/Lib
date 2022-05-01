@@ -42,7 +42,7 @@
 		FROM
 			TB_LIB
 		WHERE
-			BOOK_NAME LIKE CONCAT('%',#{keyword}, '%');
+			BOOK_NAME LIKE CONCAT('%',#{keyword},'%') OR AUTHOR LIKE CONCAT('%',#{keyword}, '%');
 
 	</select>
 	
@@ -54,7 +54,7 @@
 	FROM
 		TB_LIB
 	WHERE
-		BOOK_NAME LIKE CONCAT('%',#{keyword}, '%');
+		BOOK_NAME LIKE CONCAT('%',#{keyword},'%') OR AUTHOR LIKE CONCAT('%',#{keyword}, '%');
 	
 	</select>
 	

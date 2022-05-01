@@ -52,5 +52,15 @@ public class PageController {
 		return "/user/myInterest";
 	}
 	
+	@GetMapping("/auth/signup-terms")
+	public String SignupTermsForm() {
+		return "auth/signup-terms";
+	}
+	
+	@GetMapping("/auth/signup")
+	public String SignupForm() {
+		return "auth/signup";
+	}
+	
 	
 }	

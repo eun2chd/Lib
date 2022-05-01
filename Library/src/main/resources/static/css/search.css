@@ -4,7 +4,7 @@ body {
 
 #section-container {
     width: 100%;
-    height: 4800px;
+    height: 2700px;
 
 }
 
@@ -212,7 +212,7 @@ input[type = "checkbox"] {
 }
 
 .book-clip .book-name {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
     position: relative;
     top: -8px;
     color: #010e4d;

@@ -62,9 +62,11 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 								.oauth2_username(oauth2_username)
 								.provider(provider)
 								.role("ROLE_USER")
+								.addr(null)
 								.build();
 		
 		User userEntity = userRepository.getUserByOauth2Username(oauth2_username); // 엔티티에 유저 이름값을 넣어준다. 
+		
 		
 		
 		if(userEntity == null) { // 유저가 비어있다면 회원가입 진행

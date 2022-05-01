@@ -17,6 +17,7 @@
 			#{userprovider},
 			#{userRole},
 			#{oauth2_username},
+			#{addr},
 			NOW(),
 			NOW()
 		);

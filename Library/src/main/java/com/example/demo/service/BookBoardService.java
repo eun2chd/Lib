@@ -9,7 +9,7 @@ import com.example.demo.domain.book.BookSearch;
 public interface BookBoardService {
 	
 	public List<BookBoard> getBookBoard(int page);
-	public List<BookSearch> getBookSearch(String keyword);
+	public List<BookSearch> getBookSearch(String keyword, int page);
 	
 
 }

@@ -23,6 +23,8 @@
 
         $(document).ready(function () {
         	
+        	 /* input box 빈값 입력 경고창 */
+        	
         	$('#main-search-btn').on('click', function() {
         		if($('input#key-search').val() == '') {
         			alert('검색어를 입력하세요');
@@ -31,14 +33,10 @@
         		}
         		
         		$('#searchForm').submit();
-        		
-        	
         	});
         	
-     
-            
-        
-        	
+    
+        	 /* 날씨 API */
         	
             let weatherIcon = {
                 '01': 'fas fa-sun',
@@ -66,17 +64,14 @@
                 }
             })
         });
-        
-        
-     
-        
-        
+       
     </script>
 
 </head>
 
 <body>
 
+		<!-- 상단 NAV 바  -->
   	   <jsp:include page="./include/nav.jsp"></jsp:include>
 	
          
@@ -85,18 +80,12 @@
         <div id="h-container">
 
             <!-- Search 영역 -->
-        
             <div class="main_bg">
                 <div class="main1">
                     <div class="section">
-                        <div class="latter-check">
-                        	  <div class="in-latter-check">
-                                <label class="check-la"><input ' type="checkbox" class="in-check">단어 포함
-                                                                    검색</label>
-                            </div>
-                        </div>
+                      
                         <div class="title-box">
-                            <form  id ="searchForm"  action="/book-search" method="post">
+                            <form  id ="searchForm"  action="/book-search" method="get">
                                 <label for="" class="in-la"></label>
                                 <input id = "key-search" name = "keyword" type="text" placeholder="도서명 또는 저자를 검색하세요" class="in-search">
                                 <button id = "main-search-btn">검색</button>
@@ -107,9 +96,9 @@
                     </div>
                 </div>
             </div>
-
             <!-- Search end  -->
 
+			<!-- 지나가는 이미지 영역 -->
             <div class="h-wrap">
                 <ul>
                     <li>
@@ -134,6 +123,8 @@
             </ul>
         </div>
     </section>
+    
+    <!-- 지나가는 이미지영역 END -->
 
     <!-- group2 영역   -->
     <section class = "setion-group2">
@@ -181,15 +172,16 @@
                  </div>
              </div>
          </div>
-
-
     </section>
+    <!-- group2 END -->
+    
 
-
-     
     <!-- group3 영역   -->
     <section class = "section-group3">
+		<!-- book-list-zone Start -->
         <div class = "book-list-zone">
+        
+        	<!-- menu 바 영역  -->
             <ul class = "book-list">
                 <li>
                     <a href="">추천도서</a>
@@ -204,8 +196,10 @@
                     <a href="">TOP10</a>
                  </li>
             </ul>
+            <!-- menu바 영역 end -->
+        
 
-            <!-- book-img -->
+            <!-- book-img 추천도서 영역 -->
              <div id = "book-sug" class="book-image" style = "display: block;">
 
                 <ul class = "book-image-list" style = >    
@@ -253,7 +247,10 @@
                 </ul>
 
             </div>
+             <!-- book-img 추천도서 영역 END -->
 
+
+			  <!-- book-img 베스트셀러 영역  -->
             <div id = "book-best" class="book-image" style = "display: none;">
 
                 <ul class = "book-image-list" style = >    
@@ -299,9 +296,10 @@
                         </li>
 
                 </ul>
-
-            </div>
-
+	          </div>
+				<!-- book-img 베스트셀러 영역 END  -->
+				
+			<!-- book-img 인기도서 영역   -->	
             <div id = "book-best-pop" class="book-image" style = "display: none;">
             
                 <ul class="book-image-list" style=>
@@ -347,9 +345,11 @@
                     </li>
             
                 </ul>
-            
             </div>
+            <!-- book-img 인기도서 영역  END -->	
 
+
+			<!-- TOP10 영역  -->
             <div id="book-top" class="book-image" style = "display: none;">
             
                 <ul class="book-image-list" style=>
@@ -394,25 +394,16 @@
                         <span class="txt">달러구트 꿈 백화점.이미예 장편소설</span>
                     </li>
             
-                </ul>
-            
-            </div>
-            
-            
-            
-            
-            
-            <!-- book-img-end -->
-
-
-
-            <!-- end book list -->
+                </ul>           
+            </div>        
+           <!-- TOP10 영역 END  -->
+               
         </div>
-
-     
-
-
+        <!-- end book list END -->
+        
     </section>
+        <!-- group3 영역 END   -->
+    
 
     <!-- footer 영역 -->
     <footer>
@@ -445,16 +436,15 @@
                 <a href="#">
                     <img src="/image/top.png" alt="">
                 </a>
-
             </div>
-
         </div>
+        <!-- 위로이동 END -->
 
     </footer>
-
+	<!-- footer end -->
     
 </body>
-
+<!-- 달력 스크립트 -->
 <script src="/js/indexCalendar.js"></script>
 
 </html>

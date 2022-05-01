@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    font-family: 'Noto Sans KR';
+}
+
+table,
+tr,
+td,
+th,
+div,
+p,
+em,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+a,
+address,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+h1 {
+    float: left;
+    padding: 0 0 0 0px;
+}
+
+h2 {
+    padding: 0 0 0 0px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+}
+
+td {
+    width: 70%;
+}
+
+
+
+
+
+/* 전체 틀 */
+.wrap {
+    display: flex;
+    width: 100%;
+    height: 1100px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 50%;
+    height: 1100px;
+    background-color: #fff;
+    border-radius: 4%;
+}
+
+.form_txtInput {
+    width: 100%;
+    height: 1080px;
+    text-align: center;
+
+}
+
+/* ------- */
+
+/* 제목 및 타이틀  */
+.sub_tit_txt {
+    margin: 10px 0 20px 20px;
+    color: #2f2f2f;
+    font-size: 25px;
+}
+
+
+.join_form .check_Img {
+    font-size: 9px;
+    height: 55px;
+    display: block;
+    line-height: 55px;
+    position: relative;
+    right: 50px;
+}
+
+.email_Check_result img {
+    width: 80%;
+}
+
+
+
+/* ------- */
+
+/* [다음] 버튼 */
+.btn_wrap {
+    width: 100%;
+    text-align: center;
+    margin: 60px 0 30px;
+}
+
+.btn_wrap a {
+    color: #fff;
+    background-color: #4380ce;
+    font-weight: bold;
+    padding: 10px;
+    height: 30px;
+    line-height: 30px;
+    width: 168px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn_wrap a:hover {
+    font-size: 1.2rem;
+
+}
+
+/* 사용자 입력하는 input태그 */
+.join_form {
+    width: 100%;
+    max-width: 668px;
+    margin: 0 auto;
+}
+
+.join_form table {
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
+
+.join_form table input {
+    border: 1px solid #979090;
+    font-size: 14px;
+    height: 35px;
+    padding: 10px;
+    width: 80%;
+    float: left;
+}
+
+/* ------- */
+
+/* 각 input 박스 넓이 */
+.join_form table input.email {
+    width: 162px;
+    display: inline-block;
+}
+
+.join_form table input.email2 {
+    width: 192px;
+}
+
+.join_form.idpwFind table input {
+    width: 519px;
+}
+
+.join_form.idpwFind table input.email {
+    width: 223px;
+}
+
+.join_form.idpwFind table input.email2 {
+    width: 263px
+}
+
+.join_form.idpwFind table input.phone {
+    width: 182px;
+    margin: 0 12px 0 11px;
+}
+
+.join_form.idpwFind table input.phone2 {
+    width: 182px;
+}
+
+.join_form table input.send_number {
+    width: 383px;
+}
+
+/* ------- */
+
+/* span */
+.join_form table th span {
+    color: #404040;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    padding: 0 10px 0 0;
+    text-indent: 20px;
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+.join_form table th {
+    width: 10%;
+}
+
+
+.join_form table td {
+    padding: 6px 0;
+    position: relative;
+}
+
+.join_form table th span:after {
+    content: '*';
+    font-size: 13px;
+    color: #f95427;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+
+.join_form.idpwFind table th span:after {
+    content: none;
+}
+
+.join_form table td a.btn_confirm {
+    display: inline-block;
+    float: left;
+    width: 115px;
+    height: 48px;
+    margin: 5px 0 0 0px;
+    border: 1px solid #cfcfcf;
+    background: #dedede;
+    color: #626262;
+    text-align: center;
+    vertical-align: top;
+    line-height: 50px;
+}
+
+/* ------- */
+
+::placeholder {
+    color: #696767;
+    opacity: 1;
+}
+
+.mar10 {
+    margin: 14px 5px 0 10px;
+    display: inline-block;
+    padding: 0;
+    float: left;
+}
+
+@media (max-width: 1300px) {
+
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 85%;
+        height: 100%;
+        background-color: #fff;
+
+    }
+
+}
+
+
+@media (max-width: 1023px) {
+    .wrap {
+        margin: 30px auto;
+    }
+
+    .wrap {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        background-color: #fff;
+
+    }
+
+    .join_form .check_Img {
+        font-size: 9px;
+        height: 55px;
+        display: block;
+        line-height: 55px;
+        position: relative;
+        right: 25px;
+    }
+
+
+    .join_form {
+        width: 100%;
+    }
+
+
+    .join_form table th span {
+        text-indent: 0;
+        font-size: 11px;
+    }
+
+    .join_form table {
+        width: 100%;
+    }
+
+    .join_form table input {
+        border: 1px solid #979090;
+        font-size: 14px;
+        color: #4c4c4c;
+        height: 37px;
+        padding: 10px;
+        width: 88%;
+    }
+
+    .join_form table input.email {
+        width: 30%;
+        display: inline-block;
+    }
+
+    .join_form table input.email2 {
+        width: 60%;
+    }
+
+    .join_form.idpwFind table input {
+        width: 100%;
+    }
+
+    .join_form.idpwFind table tr.email input {
+        float: left;
+    }
+
+    .mar10 {
+        margin: 5px 2% 0 2%;
+        float: left;
+    }
+
+    .join_form.idpwFind table input.email {
+        width: 36%;
+    }
+
+    .join_form.idpwFind table input.email2 {
+        width: 53%
+    }
+
+    .join_form.idpwFind table input.phone {
+        width: 30%;
+        margin: 0 4% 0 4%;
+    }
+
+    .join_form.idpwFind table input.phone2 {
+        width: 31%;
+    }
+
+    .join_form table input.send_number {
+        width: 88%;
+    }
+
+    .exTxt {
+        margin: 0 0 25px 0px
+    }
+
+    .wrap.wd668.line .sub_tit_txt,
+    .wrap .sub_tit_txt {
+        margin: 0 0 10px 0;
+    }
+
+    .btn_wrap a,
+    .btn_wrap a.wide {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+    .join_form table td a.btn_confirm {
+        width: 100px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 12px;
+        margin: 5px 0 0;
+    }
+
+
+    .join_form table input.send_number+a {
+        margin: 5px 0 0 0px;
+    }
+}
+
+@media (max-width : 660px) {
+
+    body {
+        background-color: #fff;
+    }
+
+    .btn_wrap a,
+    .btn_wrap a.wide {
+        width: auto;
+        margin: 0;
+    }
+
+    .email_Check_result {
+        font-size: 9px;
+        height: 55px;
+        display: block;
+        line-height: 55px;
+        position: relative;
+        right: 15px;
+        top: 8px;
+    }
+
+    .email_Check_result img {
+        width: 50%;
+    }
+
+}
+
+@media (max-width : 420px) {
+    .email_Check_result {
+        font-size: 9px;
+        height: 55px;
+        display: block;
+        line-height: 55px;
+        position: relative;
+        right: 3px;
+        top: 8px;
+    }
+
+    .email_Check_result img {
+        width: 60%;
+    }
+}
+
+@media (max-height : 920px) {
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        border-radius: 0%;
+    }
+
+    .form_txtInput {
+        width: 100%;
+        text-align: center
+    }
+
+
+}
