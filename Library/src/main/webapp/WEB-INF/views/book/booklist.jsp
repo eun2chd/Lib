@@ -91,9 +91,7 @@
 
 			<div class="bar-btns">
 				<div class="page_nation">
-					
-			
-						<c:if test="${pagelist.prev}">
+					<c:if test="${pagelist.prev}">
 							<a class="arrow pprev" href="/book/booklist?page = 1"></a>
 							<a class="arrow prev" href="/book/booklist?page=${pagelist.currentPage -1 }"></a>
 					  </c:if>
@@ -143,6 +141,7 @@
 	</footer>
 
 </body>
+
 
 <script type="text/javascript">
 	var i = ${pagelist.currentPage - pagelist.startPage };
