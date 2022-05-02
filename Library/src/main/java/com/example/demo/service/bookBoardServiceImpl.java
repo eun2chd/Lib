@@ -59,16 +59,21 @@ public class bookBoardServiceImpl implements BookBoardService{
 	public List<BookSearch> getBookSearch(String keyword, int page) {
 		// TODO Auto-generated method stub
 		List<BookSearch> BookSearchBoard = new ArrayList<BookSearch>();
+		List<BookSearch> BookSearchList = bookInfoRepository.getBookSearchList(keyword);
+	
 		
-//		keyword 가 "" 이라면 list 를 초기화 하고 return 해라
-		if(keyword == "") {
+//		keyword 가 "" 이라면 list 를 초기화 하고 return 해라 또는 bookSearchList 값이 없으면 초기화 후 리턴
+		if(keyword == "" || BookSearchList.size() == 0) {
 			
 			BookSearchBoard.clear();
 			return BookSearchBoard;
 			
 		}else {
-			List<BookSearch> BookSearchList = bookInfoRepository.getBookSearchList(keyword);
+			
+			
 			int BookTotalSize = BookSearchList.size();
+			
+			System.out.println(BookSearchBoard);
 			
 			Paging pag = new Paging();
 			
