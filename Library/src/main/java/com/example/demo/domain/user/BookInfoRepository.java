@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.domain.book.BookBoard;
 import com.example.demo.domain.book.BookSearch;
-import com.example.demo.domain.book.Pagezing;
+import com.example.demo.domain.book.Paging;
 
 
 

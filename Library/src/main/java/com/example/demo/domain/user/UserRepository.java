@@ -9,7 +9,8 @@ public interface UserRepository {
 	public User getUserByOauth2Username(String oauth2_username);
 //	public UserDtl getUserDtlById(int id);
 	
-	
+//	아이디 중복체크
+	public int IdCheck(String userid);
 	
 
 }

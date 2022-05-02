@@ -5,7 +5,7 @@ import lombok.Data;
 
 
 @Data
-public class Pagezing {
+public class Paging {
 	
 //	검색영역
 	private String keyword;

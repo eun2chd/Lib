@@ -112,9 +112,6 @@ td {
     right: 50px;
 }
 
-.email_Check_result img {
-    width: 80%;
-}
 
 
 
@@ -127,21 +124,24 @@ td {
     margin: 60px 0 30px;
 }
 
-.btn_wrap a {
+.btn_wrap button {
     color: #fff;
     background-color: #4380ce;
     font-weight: bold;
     padding: 10px;
-    height: 30px;
-    line-height: 30px;
+    height: 60px;
+    line-height: 40px;
     width: 168px;
     display: block;
     text-align: center;
     margin: 0 auto;
+    cursor: pointer;
+    font-size : 19px;
+    border : 0px;
 }
 
-.btn_wrap a:hover {
-    font-size: 1.2rem;
+.btn_wrap button:hover {
+    font-size: 1.5rem;
 
 }
 
@@ -262,6 +262,41 @@ td {
 
 /* ------- */
 
+/* 로그인 페이지로 이동 */
+
+.make-account {
+    position: relative;
+    top: 15px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    margin: 8px 0px;
+}
+
+.make-account::before,
+.make-account::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 15px;
+}
+
+.make-account a {
+    font-weight: 600;
+    color: #0095f6;
+}
+
+.make-account a:hover {
+    text-decoration: underline;
+}
+
+/* ------------- */
+
 ::placeholder {
     color: #696767;
     opacity: 1;
@@ -273,6 +308,41 @@ td {
     padding: 0;
     float: left;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1300px) {
 

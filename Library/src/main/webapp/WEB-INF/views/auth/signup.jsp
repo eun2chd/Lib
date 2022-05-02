@@ -11,7 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signup.css">
     <title>회원가입</title>
-    <script src="/js/signup.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+ 
+   
+    
 </head>
 
 <body>
@@ -30,24 +34,22 @@
                         <tbody>
                             <tr>
                                 <th><span>아이디</span></th>
-                                <td><input id="email" type="text" placeholder="이메일주소"></td>
+                                <td><input id="user_id" type="text" class = "su-input" placeholder="아아디" required oninput = "checkId()"></td>
                                 <td>
-
                                     <img src="" class="check_Img">
-
                                 </td>
                             </tr>
 
                             <tr>
                                 <th><span>이름</span></th>
-                                <td><input type="text" placeholder="(실명입력)" onclick="verifyEmail()"></td>
+                                <td><input type="text" class = "su-input" placeholder="(실명입력)" ></td>
 
                             </tr>
 
 
                             <tr>
                                 <th><span>비밀번호</span></th>
-                                <td><input type="text" placeholder="비밀번호를 입력해주세요."></td>
+                                <td><input type="text" class = "su-input" placeholder="비밀번호를 입력해주세요."></td>
                             </tr>
                             <tr>
                                 <th><span>비밀번호 확인</span></th>
@@ -57,15 +59,12 @@
                                 <th><span>주소</span></th>
                                 <td>
 
-                                    <input type="text" size="10" name="wPostCode" id="postcode" placeholder="우편번호"
-                                        readonly="readonly" onclick="DaumPostcode()">
+                                    <input type="text" size="10" name="wPostCode" class = "su-input" id="postcode" placeholder="우편번호">
                                     <input type="button" onclick="DaumPostcode()" value="우편번호 찾기"><br><br />
                                     <input type="text" size="30" name="wRoadAddress" id="roadAddress"
-                                        placeholder="도로명주소" readonly="readonly" onclick="DaumPostcode()">
-                                    <input type="text" size="30" name="wJibunAddress" id="jibunAddress"
-                                        placeholder="지번주소" readonly="readonly" onclick="DaumPostcode()">
-                                    <br /><span id="guide" style="color:#999;font-size:10px;"></span>
-                                    <br /><br /><input type="text" name="wRestAddress" placeholder="나머지 주소" size="70" />
+                                        placeholder="도로명주소" class = "su-input"  >
+                           
+                                    <br /><br /><input type="text" class = "su-input" name="wRestAddress" placeholder="나머지 주소" size="70" />
                                 </td>
 
 
@@ -76,8 +75,8 @@
                             <tr class="email">
                                 <th><span>이메일</span></th>
                                 <td class="email-box">
-                                    <input type="text" class="email" placeholder=""><span class="mar10">@</span>
-                                    <input type="text" class="email email2" placeholder="">
+                                    <input type="text" class="email su-input"  placeholder=""><span class="mar10">@</span>
+                                    <input type="text" class="email email2 su-input" placeholder="">
                                     <a href="javascript:;" class="btn_confirm">인증번호 발송</a>
                                 </td>
                             </tr>
@@ -92,9 +91,13 @@
 
 
                     </table>
+                    
+                       <div class="make-account">
+               			 <a href="/auth/signin">게정이 있으신가요?</a>
+          			  </div>
 
                     <div class="btn_wrap">
-                        <a href="#">다음</a>
+                        <button class ="si-btn">가입하기</button>
                     </div>
 
                 </div>
@@ -106,5 +109,5 @@
 
 </body>
 
-
+    <script src="/js/signup.js"></script>
 </html>

@@ -33,7 +33,7 @@
                 <div class="right-util">
                     <ul>
                     	<li class = "sign-in"><a href="/auth/signin">로그인</a></li>
-                      	<li> <a href="#">회원가입</a></li>
+                      	<li> <a href="/auth/signup-terms">회원가입</a></li>
                        	<!-- 내서재 클릭시 로그인 페이지 이동 -->
                       	<li><a href="/user/myLib" class="lib">내 서재</a></li>
                     </ul>
@@ -72,7 +72,7 @@
 
                <div class ="find-group">
                     <div class ="find-user">
-                        <a href="">
+                        <a href="/auth/signup-terms">
                         계정 만들기 
                         </a>
                     </div>

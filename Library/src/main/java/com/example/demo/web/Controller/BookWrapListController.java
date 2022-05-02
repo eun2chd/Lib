@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.domain.book.BookBoard;
-import com.example.demo.domain.book.Pagezing;
+import com.example.demo.domain.book.Paging;
 import com.example.demo.domain.user.BookInfoRepository;
 import com.example.demo.service.BookBoardService;
 
@@ -30,7 +30,7 @@ public class BookWrapListController {
 	public String WrapBookListForm(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int Page) {
 			
 			List<BookBoard> boardList = bookBoardService.getBookBoard(Page);	
-			Pagezing BookPage = new Pagezing();
+			Paging BookPage = new Paging();
 			
 			int totalCount = bookInfoRepository.bookListTotalCount();
 			// 전체 페이지 수 가져오기

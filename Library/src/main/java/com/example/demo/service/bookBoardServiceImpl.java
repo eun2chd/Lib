@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.book.BookBoard;
 import com.example.demo.domain.book.BookSearch;
-import com.example.demo.domain.book.Pagezing;
+import com.example.demo.domain.book.Paging;
 import com.example.demo.domain.user.BookInfoRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class bookBoardServiceImpl implements BookBoardService{
 	@Override
 	public List<BookBoard> getBookBoard(int page) {
 		
-		Pagezing pag = new Pagezing();
+		Paging pag = new Paging();
 		
 		int totalPage = pag.TotalPage(bookInfoRepository.bookListTotalCount());
 				
@@ -68,11 +68,16 @@ public class bookBoardServiceImpl implements BookBoardService{
 			
 		}else {
 			List<BookSearch> BookSearchList = bookInfoRepository.getBookSearchList(keyword);
-			
 			int BookTotalSize = BookSearchList.size();
 			
-	
+			Paging pag = new Paging();
 			
+			int totalPage = pag.SearchTotal(bookInfoRepository.bookSearchTotalCount(keyword));
+			
+			if(page > totalPage) {
+				page = totalPage;
+			}
+		
 			int startIndex = (page - 1) * 10;
 			int endindex = page * 10;
 		

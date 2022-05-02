@@ -51,6 +51,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- 추가한 디펜던시 -->
 
 		<!-- /javax.servlet/jstl -->
 		<dependency>
@@ -94,7 +96,13 @@
 			<version>2.6.2</version>
 		</dependency>
 
+		<!-- 벨리데이션 체크 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 
+		<!-- *********** -->
 
 	</dependencies>
 

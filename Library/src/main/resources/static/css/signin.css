@@ -88,6 +88,11 @@ body {
     font-weight: 600;
 }
 
+.find-group a:hover {
+   	font-weight : 800;
+   	font-size : 15px;
+}
+
 .find-user { 
     display: inline-block;   
     margin: 0 auto;
@@ -99,3 +104,8 @@ body {
     cursor: pointer;
     background-color: #d17896;
 }
+
+
+
+
+

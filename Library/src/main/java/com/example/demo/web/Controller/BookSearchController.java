@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.domain.book.BookSearch;
-import com.example.demo.domain.book.Pagezing;
+import com.example.demo.domain.book.Paging;
 import com.example.demo.domain.user.BookInfoRepository;
 import com.example.demo.service.BookBoardService;
 
@@ -27,7 +27,7 @@ public class BookSearchController {
 			int total = 0;
 			List<BookSearch> BookSearchBoard = bookBoardService.getBookSearch(keyword,page);
 			
-			Pagezing BookPag = new Pagezing();
+			Paging BookPag = new Paging();
 //			사용자가 입력한 key값을 넘겨주기
 			BookPag.BookName(keyword);
 			
