@@ -1,0 +1,113 @@
+   	.user-id
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+    	.user-length
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+        	.user-CheckFail
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+        	.user-CheckOk
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: green;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+    .user-message
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : block;
+    }
+    
+    
+        .user-password-fail
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+        .user-password-ok
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: green;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+        .user-password-less
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

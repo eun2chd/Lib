@@ -6,6 +6,81 @@ const user_checkOk = $('.user-CheckOk');
 const user_checkFail = $('.user-CheckFail');
 
 
+/* 비밀번호 클래스 */
+const password_fail = $('.user-password-fail');
+const password_ok = $('.user-password-ok');
+const password_less = $('.user-password-less');
+
+
+
+function chkPW(){
+
+ var pw = $("#password_1").val();
+ var num = pw.search(/[0-9]/g);
+ var eng = pw.search(/[a-z]/ig);
+ var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi); 
+ 
+
+ if(pw.length < 8 || pw.length > 20){
+
+  alert("비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.");
+  return false;
+ }else if(pw.search(/\s/) != -1){
+  alert("비밀번호는 공백 없이 입력해주세요.");
+  return false;
+ }else if(num < 0 || eng < 0 || spe < 0 ){
+  alert("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+  return false;
+ }else {
+	console.log("통과"); 
+    return true;
+ }
+
+}
+
+
+$('.pw').focusout(function() {
+	let pass1 = $('#password_1').val();
+	let pass2 = $('#password_2').val();
+	
+	/* 비밀번호 정규식 */
+	var num = pass1.search(/[0-9]/g);
+	var eng = pass1.search(/[a-z]/ig);
+	var spe = pass1.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+	
+		if(pass1 != '' || pass2 != '') {
+		
+		if(pass1 == pass2) {
+			password_ok.css('display','block');
+			password_fail.css('display','none');
+			password_less.css('display','none');
+		}else {
+			password_fail.css('display','block');
+			password_ok.css('display','none');
+			password_less.css('display','none');
+		}	
+	
+}
+	
+		
+});
+
+
+/*function PassCheck() {
+	console.log(password);
+	console.log(password2);
+
+	if(password != password2) {
+		
+	}else {
+		
+	}
+			
+	
+}*/
+
+
+
 function isEmpty(str) {
 	
 	if(typeof str == "undefined" || str == null || str == '') {

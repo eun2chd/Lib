@@ -10,77 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/signupUser.css">    
     <title>회원가입</title>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    
-    
-    <style>
-    	.user-id
-    {
-    	position: relative;
-    	text-align: center;
-    	left: 290px;
-    	font-size: 13px;
-    	color: red;
-    	font-weight: 700;
-    	font-family: sans-serif;
-    	display : none;
-    }
-    
-    	.user-length
-    {
-    	position: relative;
-    	text-align: center;
-    	left: 290px;
-    	font-size: 13px;
-    	color: red;
-    	font-weight: 700;
-    	font-family: sans-serif;
-    	display : none;
-    }
-        	.user-CheckFail
-    {
-    	position: relative;
-    	text-align: center;
-    	left: 290px;
-    	font-size: 13px;
-    	color: red;
-    	font-weight: 700;
-    	font-family: sans-serif;
-    	display : none;
-    }
-    
-        	.user-CheckOk
-    {
-    	position: relative;
-    	text-align: center;
-    	left: 290px;
-    	font-size: 13px;
-    	color: green;
-    	font-weight: 700;
-    	font-family: sans-serif;
-    	display : none;
-    }
-    
-    .user-message
-     {
-    	position: relative;
-    	text-align: center;
-    	left: 290px;
-    	font-size: 13px;
-    	color: red;
-    	font-weight: 700;
-    	font-family: sans-serif;
-    	display : block;
-    }
-    
-    	
-    
-    
-    </style>
- 
-   
-    
+        
 </head>
 
 <body>
@@ -126,12 +59,20 @@
 
                             <tr>
                                 <th><span>비밀번호</span></th>
-                                <td><input type="password" name = "password" class = "su-input" placeholder="비밀번호를 입력해주세요."></td>
-                            </tr>
+                                <td><input type="password" id = "password_1" name = "password" class = "su-input pw" placeholder="비밀번호를 입력해주세요."></td>
+                           </tr>
                             <tr>
                                 <th><span>비밀번호 확인</span></th>
-                                <td><input type="password" placeholder="비밀번호를 확인하세요"></td>
+                                <td><input type="password" id = "password_2" class = "pw" placeholder="비밀번호를 확인하세요" onclick = "chkPW()"></td>
                             </tr>
+                           	 <tr>
+                            	<td>
+                            		<span class = "user-password-fail">비밀번호가 일치하지 않습니다.</span>
+                            		<span class = "user-password-ok">비밀번호가 일치합니다!</span>                            		
+                            		<span class = "user-password-less">비밀번호 양식에 맞지 않습니다.</span>                            		
+                            	</td>
+                            </tr>
+                            
                             <tr>
                                 <th><span>주소</span></th>
                                 <td>
