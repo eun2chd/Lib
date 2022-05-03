@@ -6,27 +6,24 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.service.AuthService;
 import com.example.demo.web.dto.auth.SignupReqDto;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @RestController
 public class AuthController {
-
+	
+	private final AuthService authService;
+	
 	@PostMapping("/auth/signup")
 	public Object signup(@Valid SignupReqDto signupReqDto, BindingResult bindingResult) {
 		
 		System.out.println(signupReqDto);
 		
-		System.out.println(bindingResult.hasErrors());
-		
-		if(bindingResult.hasErrors()) {
-			System.out.println("벨리데이션 체크 오류");
-		}else {
-			System.out.println("벨리데이션 체크 성공");
-		}
-		
-		return signupReqDto;
+		return authService.validCheck(signupReqDto, bindingResult);
 	}
-	
 	
 
 }

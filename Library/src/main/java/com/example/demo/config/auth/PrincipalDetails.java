@@ -22,9 +22,9 @@ public class PrincipalDetails implements UserDetails ,OAuth2User{
 	private UserDtl uesrDtl;
 	private Map<String, Object> attributes;
 	
-	public PrincipalDetails(User user, UserDtl userDtl) {
+	public PrincipalDetails(User user) {
 		this.user = user;
-		this.uesrDtl = userDtl;
+//		this.uesrDtl = userDtl;
 	}
 	
 	
@@ -75,24 +75,25 @@ public class PrincipalDetails implements UserDetails ,OAuth2User{
 		return user.getUsername();
 	}
 
+//	계정 만료
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
+// 비밀번호 5번 틀리면
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
+// 자격증명
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
+// 휴면 계정
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub

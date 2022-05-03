@@ -1,5 +1,11 @@
 package com.example.demo.web.dto.auth;
 
-public class SignupRespDto {
+import lombok.Data;
+
+@Data
+public class SignupRespDto<T> {
+	
+	private int code;
+	private T data;
 
 }

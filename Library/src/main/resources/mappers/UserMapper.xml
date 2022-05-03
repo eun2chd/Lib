@@ -28,11 +28,11 @@
 	<select id="getUserByOauth2Username"
 		resultType="com.example.demo.domain.user.User" parameterType="String">
 		select
-		*
+			*
 		from
-		TB_USER_MST
+			TB_USER_MST
 		where
-		oauth2_username = #{oauth2_username};
+			oauth2_username = #{oauth2_username};
 	</select>
 
 	<!-- <select id="getUserDtlById" resultType="com.example.demo.domain.user.User" 
@@ -49,7 +49,16 @@
 			USER_ID = #{userid};
 	</select>
 
-
+	<!-- 로그인 아이디 조회 -->
+	
+	<select id="getUserIdCheck" resultType="com.example.demo.domain.user.User" parameterType="String">
+		SELECT 
+			*
+		FROM
+			TB_USER_MST
+		WHERE
+			USER_ID = #{userid};
+	</select>
 
 </mapper>
   

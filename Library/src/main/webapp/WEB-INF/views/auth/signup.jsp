@@ -13,6 +13,71 @@
     <title>회원가입</title>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
     
+    
+    <style>
+    	.user-id
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+    	.user-length
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+        	.user-CheckFail
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+        	.user-CheckOk
+    {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: green;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+    .user-message
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : block;
+    }
+    
+    	
+    
+    
+    </style>
  
    
     
@@ -34,26 +99,38 @@
                         <tbody>
                             <tr>
                                 <th><span>아이디</span></th>
-                                <td><input id="user_id" type="text" class = "su-input" placeholder="아아디" required oninput = "checkId()"></td>
+                                <td><input id="user_id" name = "username" type="text" class = "su-input" placeholder="아아디" required oninput = "checkId()"></td>
                                 <td>
                                     <img src="" class="check_Img">
                                 </td>
                             </tr>
-
+                            
                             <tr>
+                            	<td>
+                            	<span class = "user-id">공백은 입력할 수 없습니다.!!</span>
+                            	<span class = "user-length">아이디 길이는 4~10 입니다.</span>
+                            	<span class = "user-CheckOk">사용가능한 아아디 입니다.</span>
+                            	<span class = "user-CheckFail">현재 사용중인 아이디 입니다.</span>
+                            	</td>
+                            </tr>
+								
+                            <tr>
+                            	
                                 <th><span>이름</span></th>
-                                <td><input type="text" class = "su-input" placeholder="(실명입력)" ></td>
+                                <td><input type="text" name = "name"  class = "su-input" placeholder="(실명입력)" ></td>
 
                             </tr>
+                            
+                    
 
 
                             <tr>
                                 <th><span>비밀번호</span></th>
-                                <td><input type="text" class = "su-input" placeholder="비밀번호를 입력해주세요."></td>
+                                <td><input type="password" name = "password" class = "su-input" placeholder="비밀번호를 입력해주세요."></td>
                             </tr>
                             <tr>
                                 <th><span>비밀번호 확인</span></th>
-                                <td><input type="text" placeholder="비밀번호를 확인하세요"></td>
+                                <td><input type="password" placeholder="비밀번호를 확인하세요"></td>
                             </tr>
                             <tr>
                                 <th><span>주소</span></th>

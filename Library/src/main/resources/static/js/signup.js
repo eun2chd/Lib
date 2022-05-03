@@ -1,5 +1,9 @@
 const signupInputs = document.querySelectorAll('.su-input');
 const submitBtn = document.querySelector('.si-btn');
+const user_id = $('.user-id');
+const user_length = $('.user-length');
+const user_checkOk = $('.user-CheckOk');
+const user_checkFail = $('.user-CheckFail');
 
 
 function isEmpty(str) {
@@ -22,11 +26,53 @@ function isEmpty(str) {
 			type:'post',
 			data:{id:id},
 			success:function(cnt) {
-				if(cnt != 1) {
+				
+				/* id 중복페크 cnt 값이 : 0 */
+				if(cnt != 1 && id.length >= 4 || id.length > 20) {
 					$Img.src = "/image/check.png"
+					/* 사용가능한 아이디 알려주기 */
+					user_checkOk.css('display', 'block');
+					/* 문자열 길이 체크 지워주기 */
+					user_length.css('display','none');
+					/* 공백은 입력할 수 없습니다. 가려주기 */
+					user_id.css('display','none');
+					/* 사용중인 아이디 입니다. 가려주기 */
+					user_checkFail.css('display','none');
+					
 				}else {
+					/* 현재 사용중인 아이디 입니다 안내 */
+					user_checkFail.css('display','block');
+					/* 사용가능한 아이디 입니다. 가려주기 */
+					user_checkOk.css('display', 'none');
+					
 					$Img.src = "/image/remove.png"
 				}
+				
+				if(id == "") {
+					/* 공백 입력 불가 메시지 안내 */
+					user_id.css('display' ,'block'); 
+					/* 길이체크 가려주기 */
+					user_length.css('display', 'none');
+					/* 사용중인 아이디 입니다. 가려주기 */
+					user_checkFail.css('display','none');
+					/* 사용가능한 아이디 입니다. 가려주기 */
+					user_checkOk.css('display', 'none');
+					/* X 이미지 나타내기 */
+					$Img.src = "/image/remove.png"
+					
+				} else if(id.length < 4 || id.length > 20) {
+					user_length.css('display', 'block');
+					/* 사용중인 아이디 입니다. 가려주기 */
+					/* 공백 입력 불가 메시지 안내 */
+					user_id.css('display' ,'none'); 
+					/* 길이체크 가려주기 */
+					user_checkFail.css('display','none');
+					/* 사용가능한 아이디 입니다. 가려주기 */
+					user_checkOk.css('display', 'none');
+					/* X 이미지 나타내기 */
+					$Img.src = "/image/remove.png"
+				}
+				
 			},
 			error:function() {
 				alert('에러입니다.');
@@ -42,8 +88,7 @@ function signupValidMsg(data) {
 		alert(
 			'유효성 검사 오류.\n' +
 			'오류코드 : \n' + signupDataObj.code + '\n' +
-			'userid : ' + isEmpty(signupDataObj.data.userid) + '\n' + 
-			'name : ' + isEmpty(signupDataObj.data.username) + '\n' + 
+			'name : ' + isEmpty(signupDataObj.data.name) + '\n' + 
 			'password : ' + isEmpty(signupDataObj.data.password) + '\n' + 
 			'addr : ' + isEmpty(signupDataObj.data.addr) + '\n' + 
 			'email : ' + isEmpty(signupDataObj.data.email)
@@ -56,6 +101,7 @@ function signupValidMsg(data) {
 		);
 	}else if(signupDataObj.code == 200) {
 		alert(signupDataObj.data);
+		location.replace('/auth/signin');
 	}
 
 }
@@ -79,7 +125,6 @@ function signup() {
 		dataType : "text",
 		success : function(data) {
 			signupValidMsg(data);
-			alert(data);
 		},
 		error : function() {
 			alert('비동기 오류');
@@ -91,6 +136,7 @@ function signup() {
 
 submitBtn.onclick = () => {
 	signup();
+	
 }
 
 	

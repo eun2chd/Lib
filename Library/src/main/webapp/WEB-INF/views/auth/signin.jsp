@@ -60,11 +60,11 @@
                         
                 </div>
 
-                <form id="login" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="Email" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                <form id="login" action="/auth/signin" method="post" class="input-group">
+                    <input type="text" name = "username" class="input-field" placeholder="ID" required>
+                    <input type="password" name = "password" class="input-field" placeholder="Enter Password" required>
                     <div class = "form-title">
-                        LOG IN
+                        <button	class = "si-submit-btn">LOG IN</button>
                     </div>
 
                     <div class ="sec3"></div>

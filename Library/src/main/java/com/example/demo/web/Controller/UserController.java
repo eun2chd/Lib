@@ -22,7 +22,6 @@ public class UserController {
 	public int idCheck(@RequestParam("id") String id) {
 		
 		int cnt = userService.idCheck(id);
-
 		
 		return cnt;
 	}
