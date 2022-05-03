@@ -87,12 +87,62 @@
     	position: relative;
     	text-align: center;
     	left: 290px;
+    	font-size: 12px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+         .user-password-length
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
     	font-size: 13px;
     	color: red;
     	font-weight: 700;
     	font-family: sans-serif;
     	display : none;
     }
+            .user-password-ball
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
+    
+	.email-check-ok
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: green;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : block;
+    }
+    
+    	.email-check-fail
+     {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : block;
+    }
+    
+    
+    
     
     
     

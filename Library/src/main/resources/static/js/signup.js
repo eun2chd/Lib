@@ -1,5 +1,8 @@
+/* 버튼 과 input 태그 */
 const signupInputs = document.querySelectorAll('.su-input');
 const submitBtn = document.querySelector('.si-btn');
+
+/* 유저 아이디 */
 const user_id = $('.user-id');
 const user_length = $('.user-length');
 const user_checkOk = $('.user-CheckOk');
@@ -10,10 +13,41 @@ const user_checkFail = $('.user-CheckFail');
 const password_fail = $('.user-password-fail');
 const password_ok = $('.user-password-ok');
 const password_less = $('.user-password-less');
+const password_length = $('.user-password-length');
+const password_ball = $('.user-password-ball');
 
-
-
+/* 비밀번호 정규화 규칙에 맞지 않을때 해당 css 나타냄 */
 function chkPW(){
+
+ var pw = $("#password_1").val();
+ var num = pw.search(/[0-9]/g);
+ var eng = pw.search(/[a-z]/ig);
+ var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi); 
+ 
+ 
+ if(pw.length < 7 || pw.length > 20){
+	password_length.css('display','block');
+ }else {
+	password_length.css('display','none');
+}
+
+ if(num < 0 || eng < 0 || spe < 0 ){
+  password_less.css('display','block');	
+ }else {
+  password_less.css('display','none');	
+ }
+
+ 
+ if(pw.search(/\s/) != -1){
+ 	password_ball.css('display', 'block');
+ }else {
+	password_ball.css('display', 'none');
+ }
+
+}
+
+/* 비밀번호 정규화 해당 규칙을 모두 통과하면 true 반환 */
+function chkPWresult(){
 
  var pw = $("#password_1").val();
  var num = pw.search(/[0-9]/g);
@@ -22,31 +56,22 @@ function chkPW(){
  
 
  if(pw.length < 8 || pw.length > 20){
-
-  alert("비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.");
   return false;
  }else if(pw.search(/\s/) != -1){
-  alert("비밀번호는 공백 없이 입력해주세요.");
   return false;
  }else if(num < 0 || eng < 0 || spe < 0 ){
-  alert("영문,숫자, 특수문자를 혼합하여 입력해주세요.");
   return false;
  }else {
-	console.log("통과"); 
-    return true;
+  return true;
  }
 
 }
 
 
+/* 패스워드 일치여부 나타냄  */
 $('.pw').focusout(function() {
 	let pass1 = $('#password_1').val();
 	let pass2 = $('#password_2').val();
-	
-	/* 비밀번호 정규식 */
-	var num = pass1.search(/[0-9]/g);
-	var eng = pass1.search(/[a-z]/ig);
-	var spe = pass1.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 	
 		if(pass1 != '' || pass2 != '') {
 		
@@ -65,22 +90,7 @@ $('.pw').focusout(function() {
 		
 });
 
-
-/*function PassCheck() {
-	console.log(password);
-	console.log(password2);
-
-	if(password != password2) {
-		
-	}else {
-		
-	}
-			
-	
-}*/
-
-
-
+/* str 변수를 받아서 해당 조건을 판단  */
 function isEmpty(str) {
 	
 	if(typeof str == "undefined" || str == null || str == '') {
@@ -156,24 +166,16 @@ function isEmpty(str) {
 	
 	}
 	
+	
+/* data json 으로 받아서 에러코드에 일치하는 알림창 발생 */	
 function signupValidMsg(data) {
 	let signupDataObj = JSON.parse(data);
 	
 	if(signupDataObj.code == 400) {
-		alert(
-			'유효성 검사 오류.\n' +
-			'오류코드 : \n' + signupDataObj.code + '\n' +
-			'name : ' + isEmpty(signupDataObj.data.name) + '\n' + 
-			'password : ' + isEmpty(signupDataObj.data.password) + '\n' + 
-			'addr : ' + isEmpty(signupDataObj.data.addr) + '\n' + 
-			'email : ' + isEmpty(signupDataObj.data.email)
-		);
+		alert('회원가입 진행 형식을 다시한번 확인해 주세요');
 	}
 	else if(signupDataObj.code == 401) {
-		alert(
-			'오류코드 : ' + signupDataObj.code + '\n' +
-	    	 signupDataObj 
-		);
+			alert('아아디 중복입니다. 다시한번 확인해주세요');
 	}else if(signupDataObj.code == 200) {
 		alert(signupDataObj.data);
 		location.replace('/auth/signin');
@@ -181,7 +183,7 @@ function signupValidMsg(data) {
 
 }
 	
-
+/* 사용자가 입력한 정보값을 obj 에 담기 ajax post 요청함  */
 function signup() {
 	
 		let signupObj = {
@@ -189,7 +191,7 @@ function signup() {
 			userid : signupInputs[0].value,
 			name : signupInputs[1].value,
 			password : signupInputs[2].value,
-			addr : signupInputs[3].value + ' ' + signupInputs[4].value +' '+signupInputs[5].value,
+			addr : '['+signupInputs[3].value+']' + ' ' + signupInputs[4].value +' '+signupInputs[5].value,
 			email : signupInputs[6].value + '@' + signupInputs[7].value
 		}
 	
@@ -209,9 +211,17 @@ function signup() {
 	
 }	
 
+/* 회원가입 버튼 클릭식 해당 이벤트 발생 비밀번호 정규화 true 값 넘어오면 signup 호출 */
 submitBtn.onclick = () => {
-	signup();
+
+	var flag = chkPWresult();
 	
+	if(flag == true) {
+		signup();
+	}else {
+		alert('회원가입 형식을 다시한번 확인해주세요');
+	}
+
 }
 
 	

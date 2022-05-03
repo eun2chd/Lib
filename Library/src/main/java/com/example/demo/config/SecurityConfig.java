@@ -6,6 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.example.demo.config.oauth.PrincipalOauth2UserService;
 
@@ -15,6 +17,9 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+
+    private final AuthenticationFailureHandler customFailureHandler;
 	
 	private final PrincipalOauth2UserService principalOauth2UserService;
 	
@@ -37,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.loginPage("/auth/signin")
 		.loginProcessingUrl("/auth/signin")
 		.defaultSuccessUrl("/")
+		.failureHandler(customFailureHandler)
 		.and()
 		.oauth2Login()
 		.loginPage("/auth/signin")

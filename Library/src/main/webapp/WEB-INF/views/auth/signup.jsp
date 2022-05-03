@@ -63,13 +63,16 @@
                            </tr>
                             <tr>
                                 <th><span>비밀번호 확인</span></th>
-                                <td><input type="password" id = "password_2" class = "pw" placeholder="비밀번호를 확인하세요" onclick = "chkPW()"></td>
+                                <td><input type="password" id = "password_2" class = "pw" placeholder="비밀번호를 확인하세요" onclick = "chkPW()" onfocus = "chkPW()"></td>
                             </tr>
                            	 <tr>
                             	<td>
                             		<span class = "user-password-fail">비밀번호가 일치하지 않습니다.</span>
-                            		<span class = "user-password-ok">비밀번호가 일치합니다!</span>                            		
-                            		<span class = "user-password-less">비밀번호 양식에 맞지 않습니다.</span>                            		
+                            		<span class = "user-password-ok">비밀번호가 일치합니다!</span>
+                            		<span class = "user-password-length">비밀번호는 8자리 ~ 20자리<br> 이내로 입력해주세요.</span>                                 		
+                            		<span class = "user-password-less">영문,숫자, 특수문자를 혼합하여<br> 입력해주세요.</span>                            		
+                            		<span class = "user-password-ball">비밀번호에 공백이 있습니다!</span>                            		
+                            		                       		
                             	</td>
                             </tr>
                             
@@ -77,12 +80,11 @@
                                 <th><span>주소</span></th>
                                 <td>
 
-                                    <input type="text" size="10" name="wPostCode" class = "su-input" id="postcode" placeholder="우편번호">
-                                    <input type="button" onclick="DaumPostcode()" value="우편번호 찾기"><br><br />
-                                    <input type="text" size="30" name="wRoadAddress" id="roadAddress"
-                                        placeholder="도로명주소" class = "su-input"  >
+                                    <input type="text" size="10" name="wPostCode" class = "su-input" id="postcode" placeholder="우편번호" readonly="readonly">
+                                    <input type="button" onclick="findAddr()" value="우편번호 찾기" ><br><br />
+                                    <input type="text" size="30" name="wRoadAddress" id="roadAddress" readonly="readonly" placeholder="도로명주소" class = "su-input"  >
                            
-                                    <br /><br /><input type="text" class = "su-input" name="wRestAddress" placeholder="나머지 주소" size="70" />
+                                    <br /><br /><input type="text" class = "su-input" name="wRestAddress" placeholder="나머지 주소" size="70" onfocus ="chkPW()" />
                                 </td>
 
 
@@ -94,16 +96,16 @@
                                 <th><span>이메일</span></th>
                                 <td class="email-box">
                                     <input type="text" class="email su-input"  placeholder=""><span class="mar10">@</span>
-                                    <input type="text" class="email email2 su-input" placeholder="">
-                                    <a href="javascript:;" class="btn_confirm">인증번호 발송</a>
+                                    <input type="text" class="email email2 su-input" placeholder="">                                  
                                 </td>
                             </tr>
                             <tr>
-                                <th><span>인증번호 확인</span></th>
-                                <td><input type="text" class="send_number" placeholder="10:00">
-                                    <a href="javascript:;" class="btn_confirm">인증번호 확인</a>
-                                </td>
+                            	<td>
+                            		<span class = "email-check-fail">이미 사용중인 이메일 입니다.</span>
+                            		<span class = "email-check-ok">사용가능한 메일 입니다.</span>
+                            	</td>
                             </tr>
+                        
 
                         </tbody>
 
@@ -126,6 +128,29 @@
 
 
 </body>
+	
+	<script type="text/javascript">
+	
+	function findAddr() {
+		new daum.Postcode({
+			oncomplete : function(data) {
+				console.log(data);
+				
+				var roadAddr = data.roadAddress;
+				
+				document.getElementById('postcode').value = data.zonecode;
+				if(roadAddr !== '') {
+					document.getElementById('roadAddress').value = roadAddr;
+				}
+					
+			}
+			
+			
+		}).open();
+	}	
+	</script>
+
 
     <script src="/js/signup.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>

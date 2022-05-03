@@ -25,7 +25,7 @@ public class PrincipalDetailsService implements UserDetailsService{
 		System.out.println(userEntity);
 		
 		if(userEntity == null) {
-			return null;
+			throw new UsernameNotFoundException(username);
 		}else {
 			return new PrincipalDetails(userEntity);
 		}

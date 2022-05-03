@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "java.net.URLDecoder" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,11 +67,17 @@
                     <div class = "form-title">
                         <button	class = "si-submit-btn">LOG IN</button>
                     </div>
-
+                   <c:if test = "${param.error }">
+                   	<span style="font-size: 16px;color: red;font-weight: 600;text-align: center;display: block;">${exception }</span>
+                   </c:if>
+					
                     <div class ="sec3"></div>
                 </form>
+                
+                
 
                <div class ="find-group">
+             	  
                     <div class ="find-user">
                         <a href="/auth/signup-terms">
                         계정 만들기 
@@ -88,8 +95,6 @@
 
             </div>
         </div>
-
-
 
 
       </section>
