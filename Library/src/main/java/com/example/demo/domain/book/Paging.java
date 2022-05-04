@@ -6,6 +6,8 @@ import lombok.Data;
 
 @Data
 public class Paging {
+//	페이징처리를 하기위한 함수들로 구성되어있습니다.
+	
 	
 //	검색영역
 	private String keyword;
@@ -110,7 +112,5 @@ public class Paging {
 	public int BookSearchTotal(int totalCount) {
 		return this.total = totalCount;
 	}
-
-
 
 }

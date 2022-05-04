@@ -40,13 +40,15 @@ public class AuthServiceImpl implements AuthService{
 			signupRespDto.setData(errorMap);
 			
 			
-			return signupRespDto;
+			return signupRespDto; // 에러정보를 넘겨줌
 		} else {
-			int checkUserId = userRepository.IdCheck(signupReqDto.getUserid());
+			int usereEmail = userRepository.UserEmailCheck(signupReqDto.getEmail());
+			int userid = userRepository.IdCheck(signupReqDto.getUserid());
+	
 			SignupRespDto<String> signupRespDto = new SignupRespDto<String>();
-			System.out.println("서비스 입니다. :"+checkUserId);
-			if(checkUserId == 0) {
-				// 회원가입 가능한 아이디
+			System.out.println("서비스 입니다. :"+ usereEmail);
+			if(usereEmail == 0 && userid == 0) {
+				// 사용가능한 이메일
 				User userEntity = signupReqDto.toEntity();
 				userRepository.insertUser(userEntity);
 				signupRespDto.setCode(200);
@@ -54,11 +56,11 @@ public class AuthServiceImpl implements AuthService{
 			}else {
 				// 아이디 중복
 				signupRespDto.setCode(401);
-				signupRespDto.setData("중복된 아이디");
+				signupRespDto.setData("아이디 또는 이메일이 중복되었습니다.");
 				
 			}
 			
-			return signupRespDto;
+			return signupRespDto; // 사용자 정보를 넘겨줌 
 			
 		}
 			

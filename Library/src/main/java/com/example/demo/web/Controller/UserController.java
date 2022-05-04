@@ -26,4 +26,14 @@ public class UserController {
 		return cnt;
 	}
 	
+	@PostMapping("/auth/emailCheck")
+	public int emailCheck(@RequestParam("email") String email) {
+		
+		System.out.println(email);
+		
+		int emailFlag = userService.emailCheck(email);
+		
+		return emailFlag;
+	}
+	
 }

@@ -126,7 +126,7 @@
     	color: green;
     	font-weight: 700;
     	font-family: sans-serif;
-    	display : block;
+    	display : none;
     }
     
     	.email-check-fail
@@ -138,13 +138,22 @@
     	color: red;
     	font-weight: 700;
     	font-family: sans-serif;
-    	display : block;
+    	display : none;
     }
     
     
     
-    
-    
+    .email-check-em
+       {
+    	position: relative;
+    	text-align: center;
+    	left: 290px;
+    	font-size: 13px;
+    	color: red;
+    	font-weight: 700;
+    	font-family: sans-serif;
+    	display : none;
+    }
     
     
     

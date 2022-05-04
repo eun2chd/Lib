@@ -8,8 +8,6 @@ import com.example.demo.domain.book.BookBoard;
 import com.example.demo.domain.book.BookSearch;
 import com.example.demo.domain.book.Paging;
 
-
-
 @Mapper
 public interface BookInfoRepository {
 	

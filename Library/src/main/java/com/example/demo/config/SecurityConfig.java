@@ -40,9 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.and()
 		.formLogin()
 		.loginPage("/auth/signin")
-		.loginProcessingUrl("/auth/signin")
-		.defaultSuccessUrl("/")
-		.failureHandler(customFailureHandler)
+		.loginProcessingUrl("/auth/signin")  
+		.defaultSuccessUrl("/")  // 로그인 성공하면 / 요청으로 보냄
+		.failureHandler(customFailureHandler) // 로그인 실패시 
 		.and()
 		.oauth2Login()
 		.loginPage("/auth/signin")

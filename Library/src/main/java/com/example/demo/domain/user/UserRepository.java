@@ -13,5 +13,7 @@ public interface UserRepository {
 	public int IdCheck(String userid);
 //  로그인시 해당 아이디 조회해서 정보 들고옴
 	public User getUserIdCheck(String userid);	
-
+//  이메일 중복체크
+	public int UserEmailCheck(String mail);
+ 
 }

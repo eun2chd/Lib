@@ -22,4 +22,12 @@ public class UserServiceImpl implements UserService{
 		return resultId;
 	}
 
+	@Override
+	public int emailCheck(String email) {
+
+		int resultEmail = userRepository.UserEmailCheck(email);
+		
+		return resultEmail;
+	}
+
 }

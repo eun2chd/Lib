@@ -8,6 +8,11 @@ const user_length = $('.user-length');
 const user_checkOk = $('.user-CheckOk');
 const user_checkFail = $('.user-CheckFail');
 
+/* 이메일 */
+const user_mail_fail = $('.email-check-fail');
+const user_mail_ok = $('.email-check-ok');
+const user_mail_em = $('.email-check-em');
+
 
 /* 비밀번호 클래스 */
 const password_fail = $('.user-password-fail');
@@ -100,9 +105,51 @@ function isEmpty(str) {
 	}
 	
 }
-
-
-    /* 아이디 체크 */
+	
+	/* 이메일 중복 체크 */
+	function emailCheck() {
+		var email = signupInputs[6].value + '@' + signupInputs[7].value;
+		/* 이메일 정규화 */
+		var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		
+		
+		$.ajax({
+			url : '/auth/emailCheck',
+			type : 'post',
+			data : {email:email},
+			success : function (emailFlag) {
+				if(emailFlag == 0) {
+					user_mail_ok.css('display','block');
+					user_mail_fail.css('display','none');
+				}else {
+					user_mail_fail.css('display','block');
+					user_mail_ok.css('display','none');
+				}
+				if(email.match(regExp) != null) {
+					user_mail_em.css('display','none');
+				}else {
+					user_mail_em.css('display','block');
+					user_mail_ok.css('display','none');
+				}
+				
+			
+			},
+			error:function(){
+				alert('에러입니다.');
+			}
+		
+		});	
+	
+			
+	}
+	
+	
+	
+	
+	
+	
+	
+    /* 아이디 중복 체크 */
      function checkId() {
 		$Img = document.querySelector(".check_Img");
 		var id = $('#user_id').val(); // 사용자가 입력한 아이디 저장
@@ -175,7 +222,7 @@ function signupValidMsg(data) {
 		alert('회원가입 진행 형식을 다시한번 확인해 주세요');
 	}
 	else if(signupDataObj.code == 401) {
-			alert('아아디 중복입니다. 다시한번 확인해주세요');
+			alert('아아디 또는 이메일 중복입니다. 다시한번 확인해주세요');
 	}else if(signupDataObj.code == 200) {
 		alert(signupDataObj.data);
 		location.replace('/auth/signin');

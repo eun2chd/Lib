@@ -21,8 +21,7 @@
     <div class="wrap">
         <div class="container">
             <div class="form_txtInput">
-                <h2 class="sub_tit_txt">회원가입</h2>
-                <p class="exTxt">회원가입시 이메일 인증을 반드시 진행하셔야 합니다.</p>
+                <h2 class="sub_tit_txt">회원가입</h2>  
                 <div class="join_form">
                     <table>
                         <colgroup>
@@ -96,13 +95,14 @@
                                 <th><span>이메일</span></th>
                                 <td class="email-box">
                                     <input type="text" class="email su-input"  placeholder=""><span class="mar10">@</span>
-                                    <input type="text" class="email email2 su-input" placeholder="">                                  
+                                    <input type="text" class="email email2 su-input" placeholder="" required oninput ="emailCheck()">                                  
                                 </td>
                             </tr>
                             <tr>
                             	<td>
                             		<span class = "email-check-fail">이미 사용중인 이메일 입니다.</span>
                             		<span class = "email-check-ok">사용가능한 메일 입니다.</span>
+                            		<span class = "email-check-em">이메일 형식에 맞지 않습니다.</span>
                             	</td>
                             </tr>
                         

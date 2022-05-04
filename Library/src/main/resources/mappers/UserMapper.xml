@@ -49,6 +49,17 @@
 			USER_ID = #{userid};
 	</select>
 
+		<!-- 이메일 중복체크 -->
+
+	<select id="UserEmailCheck" resultType="Integer" parameterType="String">
+		SELECT 
+			COUNT(USER_EMAIL)
+		FROM
+			TB_USER_MST
+		WHERE
+			USER_EMAIL = #{mail};
+	</select>
+
 	<!-- 로그인 아이디 조회 -->
 	
 	<select id="getUserIdCheck" resultType="com.example.demo.domain.user.User" parameterType="String">
@@ -59,6 +70,8 @@
 		WHERE
 			USER_ID = #{userid};
 	</select>
+	
+	
 
 </mapper>
   
