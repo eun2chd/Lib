@@ -40,7 +40,7 @@
                             <tr>
                             	<td>
                             	<span class = "user-id">공백은 입력할 수 없습니다.!!</span>
-                            	<span class = "user-length">아이디 길이는 4~10 입니다.</span>
+                            	<span class = "user-length">아이디 길이는 4~20 입니다.</span>
                             	<span class = "user-CheckOk">사용가능한 아아디 입니다.</span>
                             	<span class = "user-CheckFail">현재 사용중인 아이디 입니다.</span>
                             	</td>

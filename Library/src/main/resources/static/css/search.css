@@ -248,15 +248,19 @@ input[type = "checkbox"] {
 }
 .brow-book-btn {
     position: relative;
-    top: -80px;
+    top: -110px;
     float:right;
 }
-.brow-book-btn .brow-btn{
-    padding : 25px;
-    font-size: 15px
+.brow-book-btn .brow-bt{
+    padding: 25px;
+    font-size: 15px;
+    background-color: #c0bebe;
+    color: #000;
+
+    font-weight: 600;
 }
-.brow-btn:hover {
-    background-color: #928f8f;
+.brow-bt:hover {
+    background: #0c136d;
     color: #fff;
  
 }

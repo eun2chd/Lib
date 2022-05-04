@@ -20,7 +20,6 @@ public class AuthController {
 	@PostMapping("/auth/signup")
 	public Object signup(@Valid SignupReqDto signupReqDto, BindingResult bindingResult) {
 		
-		System.out.println(signupReqDto);
 		
 		return authService.validCheck(signupReqDto, bindingResult);
 	}

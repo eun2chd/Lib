@@ -44,7 +44,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 			oAuth2UserAttributes = (Map<String, Object>)oAuth2User.getAttributes().get("response");
 			                       // 오브젝트로 들고오기때문에 형변환 해줘야함.
 			providerId = (String)oAuth2UserAttributes.get("id"); // id 값을 providerId 에 저장 (어떤 로그인 인지 구분하기 위함)
-			System.out.println(providerId);
 		}else if(provider.equals("google")) {
 			providerId = (String)oAuth2UserAttributes.get("sub");
 		}else if(provider.equals("facebook")) {

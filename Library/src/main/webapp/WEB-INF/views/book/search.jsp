@@ -125,10 +125,10 @@
                             </span>
                         </div>
                         <div class = "book-clip">
-                            <p class = "book-name">제목 : "${book.BOOK_NAME }"</p>
-                            <p>저자 : "${book.AUTHOR }"</p>
-                            <p>출판사 : "${book.PUBLISHER }"</p>
-                            <p>도서관 : "${book.LOCATION }"</p>
+                           <a href = "#"> <p class = "book-name">제목 : "${book.BOOK_NAME }"</p></a>
+                            <p class = "book-author">저자 : "${book.AUTHOR }"</p>
+                            <p class = "book-publisher">출판사 : "${book.PUBLISHER }"</p>
+                            <p class = "book-location">도서관 : "${book.LOCATION }"</p>                                             
                             <p>코드 : "${book.CALL_SIGN }"</p>
                         </div>
                         <div class = "brow-book-view">
@@ -138,7 +138,7 @@
                             <p style = "display: none;">대출 불가</p>
                             <div class = "brow-book-btn">
                             <span>
-                                <a href="#" class = "brow-btn">대출하기</a>
+                              	<button class = "brow-bt" onclick =  "BookBorrow()">대출하기</button>
                             </span>
                             </div>
                         </div>
@@ -211,6 +211,8 @@
         </footer>
 
 </body>
+
+
 <script type="text/javascript">
 	var i = ${bookSerch.currentPage - bookSerch.startPage };
 	var totalPage = ${bookSerch.totalPage - bookSerch.startPage}
@@ -224,6 +226,10 @@
 		
 	});
 </script>
+
+<script src = "/js/search.js"></script>
+
+
 
 
 </html>

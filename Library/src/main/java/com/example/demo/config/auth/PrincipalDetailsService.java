@@ -19,10 +19,7 @@ public class PrincipalDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		System.out.println(username);
 		User userEntity = userRepository.getUserIdCheck(username);
-		
-		System.out.println(userEntity);
 		
 		if(userEntity == null) {
 			throw new UsernameNotFoundException(username);

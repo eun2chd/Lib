@@ -51,7 +51,7 @@
 
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/user/user-edit">
                                 <span style="font-weight: bold;">회원정보 수정</span>
                             </a>
                         </li>

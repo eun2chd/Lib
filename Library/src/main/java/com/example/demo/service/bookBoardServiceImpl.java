@@ -51,7 +51,7 @@ public class bookBoardServiceImpl implements BookBoardService{
 			boardList.add(bookBoardslist.get(i));
 		}
 		
-		
+	
 		return boardList;
 	}
 
@@ -73,8 +73,7 @@ public class bookBoardServiceImpl implements BookBoardService{
 			
 			int BookTotalSize = BookSearchList.size();
 			
-			System.out.println(BookSearchBoard);
-			
+		
 			Paging pag = new Paging();
 			
 			int totalPage = pag.SearchTotal(bookInfoRepository.bookSearchTotalCount(keyword));

@@ -99,7 +99,7 @@
 
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/user/user-edit">
                                 <span>회원정보 수정</span>
                             </a>
                         </li>

@@ -70,6 +70,15 @@ public class PageController {
 		return "auth/signup";
 	}
 	
+	@GetMapping("/user/user-edit")
+	public String accountsEdit() {
+		return "accounts/accounts-edit";
+	}
+	
+	@GetMapping("/user/password-edit")
+	public String accountsPassword() {
+		return "accounts/accounts-password";
+	}
 
 	
 	

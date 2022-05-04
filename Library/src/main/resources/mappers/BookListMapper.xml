@@ -58,7 +58,23 @@
 	
 	</select>
 	
+	<!-- 대출한책 insert 날리기 -->
+	<insert id="insertBorrowBoard" parameterType="com.example.demo.domain.book.BookBorrowBoard">
+		insert into
+			TB_LOAN
+		values(
+		0,
+		#{bookname},
+		#{bookauthor},
+		#{bookpublisher},
+		#{booklocation},
+		#{user_key},
+		now(),
+		now()
+		
+		)
+	</insert>
 	
-
+	
 </mapper>
   
