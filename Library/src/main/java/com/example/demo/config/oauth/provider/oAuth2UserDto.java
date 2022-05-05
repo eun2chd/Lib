@@ -10,7 +10,9 @@ import lombok.Data;
 public class oAuth2UserDto {
 
 	private String oauth2_username;
-	private String email;
+	private String userid;
+	private String user_email_1;
+	private String user_email_2;	
 	private String name;
 	private String provider;
 	private String role;
@@ -18,13 +20,14 @@ public class oAuth2UserDto {
 	
 	public User toEntity() {
 		return User.builder()
-				.userid(email)
+				.userid(userid)
 				.oauth2_username(oauth2_username)
-				.usermail(email)
+				.user_email_1(user_email_1)
+				.user_email_2(user_email_2)
 				.username(name)	
 			    .userRole(role)
 			    .userprovider(provider)
-			    .addr(addr)
+			    .user_addr_1(addr)
 			    .build();
 	}
 	

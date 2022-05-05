@@ -238,8 +238,11 @@ function signup() {
 			userid : signupInputs[0].value,
 			name : signupInputs[1].value,
 			password : signupInputs[2].value,
-			addr : '['+signupInputs[3].value+']' + ' ' + signupInputs[4].value +' '+signupInputs[5].value,
-			email : signupInputs[6].value + '@' + signupInputs[7].value
+			addr_number : '['+signupInputs[3].value+']',
+			addr_1 : signupInputs[4].value,
+			addr_2 : signupInputs[5].value,
+			email_1 : signupInputs[6].value,
+			email_2 : signupInputs[7].value
 		}
 	
 	$.ajax({

@@ -70,15 +70,19 @@
 										<tbody>
 											<tr>
 												<th>이전 비밀번호</th>
-												<td><input type="text" class="text"></td>
+												<td><input id = "pre-password-ip" type="password" class="text"></td>
 											</tr>
 											<tr>
 												<th>새 비밀번호</th>
-												<td><input type="text" class="text"></td>
+												<td><input id = "new-password-ip" type="password" class="text">
+												<p style="font-weight: bold;position: relative;top: 5px;">비밀번호 길이는 8 ~ 20 자 이내 입니다. 특수문자 및 영문자를 포함해주세요</p>
+												</td>
+												
+										
 											</tr>
 											<tr>
 												<th>새 비밀번호 확인</th>
-												<td><input type="text" class="text"></td>
+												<td><input id = "new-repassword-ip" type="password" class="text"></td>
 											</tr>
 										</tbody>
 									</table>
@@ -86,7 +90,7 @@
 								</div>
 							</form>
 							<div class="btn-wrap">
-								<a href="" class="save-btn">저장</a> <a href="" class="cancel-btn">취소</a>
+								<button type = "button" class = "save-btn">저장</button> <button type = "button" class = "cancel-btn">취소</button>
 							</div>
 
 
@@ -125,5 +129,7 @@
 	</footer>
 
 </body>
+
+<script src = "/js/accounts-password.js"></script>
 
 </html>

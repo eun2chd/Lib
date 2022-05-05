@@ -189,8 +189,8 @@ th {
 }
 
 .editForm table .btn {
-    height: 26px;
-    line-height: 25px;
+    height: 27px;
+    line-height: 16px;
     padding: 1px 10px;
     letter-spacing: -1px;
     font-size: 90%;
@@ -198,6 +198,7 @@ th {
     border: 1px solid #d5d5d5;
     padding: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .editForm table .selectmenu {
@@ -247,6 +248,7 @@ input.text {
     color: #fff;
     padding: 14px 22px;
     letter-spacing: -1px;
+    cursor: pointer;
 }
 
 .btn-wrap .cancel-btn {
@@ -255,6 +257,7 @@ input.text {
     color: #fff;
     padding: 14px 22px;
     letter-spacing: -1px;
+    cursor: pointer;
 }
 
 

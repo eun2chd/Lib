@@ -31,10 +31,10 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
 		System.out.println("userRequestClient : " + userRequest.getClientRegistration()); // 데이터 보기
-		System.out.println("Token : " + userRequest.getAccessToken()); // Token 값 보기
+//		System.out.println("Token : " + userRequest.getAccessToken()); // Token 값 보기
 		OAuth2User oAuth2User = super.loadUser(userRequest);
 		Map<String, Object> oAuth2UserAttributes = oAuth2User.getAttributes();
-		System.out.println(oAuth2UserAttributes); // 응답받는 데이터 보기 (내정보가 담겨서 넘어옴)		
+//		System.out.println(oAuth2UserAttributes); // 응답받는 데이터 보기 (내정보가 담겨서 넘어옴)		
 		
 		
 		String provider = userRequest.getClientRegistration().getRegistrationId(); // 여기에 naver,google,facebook 등 해당 id가 저장됨 [사용자가 로그인 시]
@@ -55,9 +55,16 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 			// providerId 값이 null 이라면 uuid 값 넣으면(의미없다) db테이블에 있는 패스워드랑 관련이 없기때문에 임의이값을 그냥 넣음
 		}
 		String oauth2_username = provider + "_" + providerId; // naver_providerId 연결
+		String Email = (String)oAuth2UserAttributes.get("email");
+		int idx = Email.indexOf("@");
+		String mail_1 = Email.substring(0,idx);
+		String mail_2 = Email.substring(idx+1);
+		
 		oAuth2UserDto auth2UserDto = oAuth2UserDto.builder()  // 각 정보를 가져오면 해당 정보를 각 DTO 객체에 담아준다.
+								.userid((String)oAuth2UserAttributes.get("email"))
 								.name((String)oAuth2UserAttributes.get("name"))
-								.email((String)oAuth2UserAttributes.get("email"))
+								.user_email_1(mail_1)
+								.user_email_2(mail_2)
 								.oauth2_username(oauth2_username)
 								.provider(provider)
 								.role("ROLE_USER")
@@ -76,8 +83,8 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	
 		}
 			
-//		UserDtl userDtlEntity = userRepository.getUserDtlById(userEntity.getId());
-		return new PrincipalDetails(userEntity, oAuth2UserAttributes); // 유저이름과 , 어스정보 리턴
+		UserDtl userDtlEntity = userRepository.getUserDtlById(userEntity.getId());
+		return new PrincipalDetails(userEntity,userDtlEntity ,oAuth2UserAttributes); // 유저이름과 , 어스정보 리턴
 	
 	}
 

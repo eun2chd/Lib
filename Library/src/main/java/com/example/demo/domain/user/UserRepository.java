@@ -16,5 +16,12 @@ public interface UserRepository {
 	public User getUserIdCheck(String userid);	
 //  이메일 중복체크
 	public int UserEmailCheck(String mail);
+	
+	public UserDtl getUserDtlById(int id);
+	
+//	회원정보 업데이트
+	public int updateUserById(User user);
+	public int updateUserDtlById(UserDtl userDtl);
+	public int updatePasswordById(User user);
  
 }

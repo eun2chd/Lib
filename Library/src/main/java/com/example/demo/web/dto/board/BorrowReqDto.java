@@ -18,6 +18,7 @@ public class BorrowReqDto {
 				.bookname(bookname)
 				.bookauthor(bookauthor)
 				.bookpublisher(bookpublisher)
+				.booklocation(booklocation)
 				.user_key(userkey)
 				.build();
 			

@@ -22,19 +22,24 @@ public class SignupReqDto {
 	@Size(min = 8, max = 20)
 	private String password;
 	@NotBlank
-	@Size(min = 6, max = 50)
-	private String addr;
+	private String addr_number;
+	private String addr_1;
+	private String addr_2;
 	@NotBlank
 	@Size(min = 5, max = 20)
-	private String email;
+	private String email_1;
+	private String email_2;
 	
 	public User toEntity() {
 		return User.builder()
 				.userid(userid)
 				.username(name)
 				.userPw(new BCryptPasswordEncoder().encode(password))
-				.addr(addr)
-				.usermail(email)
+				.user_adder_number(addr_number)
+				.user_addr_1(addr_1)
+				.user_addr_2(addr_2)
+				.user_email_1(email_1)
+				.user_email_2(email_2)
 				.userRole("ROLE_USER")
 				.build();
 	}

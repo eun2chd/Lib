@@ -95,7 +95,7 @@
                                 <th><span>이메일</span></th>
                                 <td class="email-box">
                                     <input type="text" class="email su-input"  placeholder=""><span class="mar10">@</span>
-                                    <input type="text" class="email email2 su-input" placeholder="" required oninput ="emailCheck()">                                  
+                                    <input type="text" class="email email2 su-input" placeholder="">                                  
                                 </td>
                             </tr>
                             <tr>

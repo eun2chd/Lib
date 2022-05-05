@@ -125,7 +125,7 @@
                             </span>
                         </div>
                         <div class = "book-clip">
-                           <a href = "#"> <p class = "book-name">제목 : "${book.BOOK_NAME }"</p></a>
+                           <a href = "#"> <p class = "book-name" >제목 : "${book.BOOK_NAME }"</p></a>
                             <p class = "book-author">저자 : "${book.AUTHOR }"</p>
                             <p class = "book-publisher">출판사 : "${book.PUBLISHER }"</p>
                             <p class = "book-location">도서관 : "${book.LOCATION }"</p>                                             
@@ -138,7 +138,7 @@
                             <p style = "display: none;">대출 불가</p>
                             <div class = "brow-book-btn">
                             <span>
-                              	<button class = "brow-bt" onclick =  "BookBorrow()">대출하기</button>
+                              	<button class = "brow-bt" name = "test" value="2" onclick =  "BookBorrow()">대출하기</button>
                             </span>
                             </div>
                         </div>

@@ -42,12 +42,12 @@ public class AuthServiceImpl implements AuthService{
 			
 			return signupRespDto; // 에러정보를 넘겨줌
 		} else {
-			int usereEmail = userRepository.UserEmailCheck(signupReqDto.getEmail());
+			
 			int userid = userRepository.IdCheck(signupReqDto.getUserid());
 	
 			SignupRespDto<String> signupRespDto = new SignupRespDto<String>();
-			if(usereEmail == 0 && userid == 0) {
-				// 사용가능한 이메일
+			if(userid == 0) {
+				// 사용가능한 아이디
 				User userEntity = signupReqDto.toEntity();
 				userRepository.insertUser(userEntity);
 				signupRespDto.setCode(200);

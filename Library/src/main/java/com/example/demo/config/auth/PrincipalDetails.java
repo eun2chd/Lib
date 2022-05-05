@@ -19,18 +19,19 @@ public class PrincipalDetails implements UserDetails ,OAuth2User{
 	private static final long serialVersionUID = 1L;
 	
 	private User user;
-	private UserDtl uesrDtl;
+	private UserDtl userDtl;
 	private Map<String, Object> attributes;
 	
-	public PrincipalDetails(User user) {
+	public PrincipalDetails(User user, UserDtl userDtl) {
 		this.user = user;
-//		this.uesrDtl = userDtl;
+		this.userDtl = userDtl;
 	}
 	
 	
 	
-	public PrincipalDetails(User user, Map<String, Object> attributes) {
+	public PrincipalDetails(User user,UserDtl userDtl, Map<String, Object> attributes) {
 		this.user = user;
+		this.userDtl = userDtl;
 		this.attributes = attributes;
 	}
 

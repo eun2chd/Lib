@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,59 +68,62 @@
 						</div>
 					</div>
 					<div class="bor-content">
-						<div class="content">
-							<form action="" id="" name="" method="">
+						<div class="content">							
 								<div class="editForm">
 									<table id="">
 										<tbody>
 											<tr>
 												<th>성명</th>
-												<td>성은총</td>
+												<td>${principal.user.username }</td>
 											</tr>
 											<tr>
 												<th>아이디</th>
-												<td>tdc2428</td>
+												<td>${principal.user.userid }</td>
 											</tr>
+										<form enctype = "multpart/form-data">
 											<tr>
 												<th>성별</th>
-												<td><select name="" id="">
-														<option value="">남</option>
-														<option value="">여</option>
-												</select></td>
+												<td>
+												<input type = "text" id = "genderInput" class = "text" name = "gender" value = ${principal.userDtl.user_gender }>
+													<select id = "genderBtn" >
+														<option value = "남">남</option>
+														<option value = "여">여</option>
+													</select>	
+													
+											</td>
 											</tr>
 											<tr>
 												<th>휴대폰</th>
-												<td><input type="text" class="text"></td>
+												<td><input type="text" class="text" name = "user_phone" placeholder="010-xxxx-xxxx" value = "${principal.userDtl.user_phone }"></td>
 											</tr>
 
 											<tr>
 												<th>생년월일</th>
-												<td><input type="text" class="text"></td>
+												<td><input type="text" class="text" name = "birthday" placeholder="ex)xxxx/xx/xx" value = "${principal.userDtl.user_birthday }"></td>
 											</tr>
 
 											<tr>
 												<th>주소</th>
 												<td>
 													<p>
-														<input type="text" class="text"><a href="#"
-															class="btn">우편번호찾기</a>
+														<input type="text" id = "postcode" class="text" name = "addr_number"  value = "${principal.userDtl.addr_number }">
+														 <input type="button" class = "btn" onclick="findAddr()" value="우편번호 찾기" >
 													</p>
 													<p>
-														<input type="text" class="text" style="width: 80%;">
+														<input type="text" id = "roadAddress" class="text" name = "addr_1" style="width: 80%;" value = "${principal.userDtl.addr_1 }">
 													</p>
 													<p>
-														<input type="text" id="address_1" class="text"
+														<input type="text" id="address_1" name = "addr_2" class="text" value = "${principal.userDtl.addr_2 }"
 															style="width: 80%">
 													</p>
 												</td>
 											</tr>
 											<tr>
 												<th>이메일</th>
-												<td><input type="text" class="text">@<input
-													type="text" class="text"> <select id="email2_temp"
-													class="selectmenu" style="width: 150px;">
+												<td><input type="text" class="text" name = "mail_1" value = "${principal.userDtl.mail_1 }">@<input
+													type="text" id = "changeInput" class="text" name = "mail_2" value = "${principal.userDtl.mail_2 }" > 
+													<select id="email2_temp" class="selectmenu" onchange = "" style="width: 150px;">
 														<option value="">--직접입력--</option>
-
 														<option value="naver.com">naver.com</option>
 														<option value="daum.net">daum.net</option>
 														<option value="gmail.com">gmail.com</option>
@@ -133,7 +141,7 @@
 								</div>
 							</form>
 							<div class="btn-wrap">
-								<a href="" class="save-btn">저장</a> <a href="" class="cancel-btn">취소</a>
+								<button class = "save-btn">저장</button> <button class = "cancel-btn">취소</button>
 							</div>
 
 
@@ -172,6 +180,42 @@
 	</footer>
 
 </body>
+
+<script src = "/js/accounts-edit.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('.selectmenu').change(function(){
+			$('#changeInput').val($(this).val());
+		});
+		$('#genderBtn').change(function() {
+			 $('#genderInput').val($(this).val());
+		});
+	});
+	
+	
+	
+	function findAddr() {
+		new daum.Postcode({
+			oncomplete : function(data) {
+
+				var roadAddr = data.roadAddress;
+				
+				document.getElementById('postcode').value = data.zonecode;
+				if(roadAddr !== '') {
+					document.getElementById('roadAddress').value = roadAddr;
+				}
+					
+			}
+			
+			
+		}).open();
+	}	
+	
+	
+	
+	</script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 </html>
 

@@ -14,11 +14,14 @@
 		#{userid},
 		#{username},
 		#{userPw},
-		#{usermail},
+		#{user_email_1},
+		#{user_email_2},
 		#{userprovider},
 		#{userRole},
 		#{oauth2_username},
-		#{addr},
+		#{user_adder_number},
+		#{user_addr_1},
+		#{user_addr_2},
 		NOW(),
 		NOW()
 		);
@@ -35,8 +38,7 @@
 			oauth2_username = #{oauth2_username};
 	</select>
 
-	<!-- <select id="getUserDtlById" resultType="com.example.demo.domain.user.User" 
-		parameterType="Integer"> select * from TB_USER_DTL where id = #{id}; </select> -->
+	
 
 	<!-- 아이디 중복체크 -->
 
@@ -70,6 +72,68 @@
 		WHERE
 			USER_ID = #{userid};
 	</select>
+	
+	<select id="getUserDtlById" resultType="com.example.demo.domain.user.UserDtl" parameterType="Integer">
+	 	select
+	 	 *
+	 	from
+	 	 TB_USER_DTL
+	 	WHERE
+	 	 id = #{id};
+	</select>
+	
+	
+	<update id="updateUserById" parameterType="com.example.demo.domain.user.User">
+		update
+			TB_USER_MST
+		set
+			user_adder_number = #{user_adder_number},
+			user_addr_1 = #{user_addr_1},
+			user_addr_2 = #{user_addr_2},
+			user_email_1 = #{user_email_1},
+			user_email_2 = #{user_email_2},
+			
+			update_date = now()
+			
+		where
+			id = #{id};
+	
+	</update>
+	
+	<update id="updateUserDtlById" parameterType="com.example.demo.domain.user.UserDtl">
+		update
+			 TB_USER_DTL
+		set
+			user_gender = #{user_gender},
+			user_phone = #{user_phone},
+			user_birthday = #{user_birthday},
+			addr_number = #{addr_number},
+			addr_1 = #{addr_1},
+			addr_2 = #{addr_2},
+			mail_1 = #{mail_1},
+			mail_2 = #{mail_2},
+			
+			update_date = now()
+		where
+			id = #{id};
+	
+	
+	
+	</update>
+	
+	<!-- 비밀번호 업데이트  -->
+	<update id="updatePasswordById" parameterType="com.example.demo.domain.user.User">
+		update
+			TB_USER_MST
+		set
+			USER_PASSWORD = #{userPw}
+		where
+			id = #{id};
+	</update>
+	
+	
+	
+	
 	
 	
 
