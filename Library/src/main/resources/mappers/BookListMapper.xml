@@ -31,6 +31,19 @@
 		TB_LIB	
 	</select> 
 	
+	<select id="BookShowInfoBoard" resultType="com.example.demo.domain.book.BookShowInfo">
+  	   SELECT 
+ 		*
+	  FROM
+		TB_LIB
+	  WHERE 
+	  	BOOK_NAME = #{bookname}	
+	</select> 
+	
+	
+	
+	
+	
 	<!-- 사용자가 검색한 책 정보 조회 -->
 	<select id="getBookSearchList" resultType="com.example.demo.domain.book.BookSearch">
 		 SELECT 

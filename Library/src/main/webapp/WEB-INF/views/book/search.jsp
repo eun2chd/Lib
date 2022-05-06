@@ -125,7 +125,7 @@
                             </span>
                         </div>
                         <div class = "book-clip">
-                           <a href = "#"> <p class = "book-name" >제목 : "${book.BOOK_NAME }"</p></a>
+                           <a href = "/book/bookshow?bookname=${book.BOOK_NAME }"> <p class = "book-name" >제목 : "${book.BOOK_NAME }"</p></a>
                             <p class = "book-author">저자 : "${book.AUTHOR }"</p>
                             <p class = "book-publisher">출판사 : "${book.PUBLISHER }"</p>
                             <p class = "book-location">도서관 : "${book.LOCATION }"</p>                                             

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.book.BookBoard;
 import com.example.demo.domain.book.BookSearch;
+import com.example.demo.domain.book.BookShowInfo;
 import com.example.demo.domain.book.Paging;
 import com.example.demo.domain.user.BookInfoRepository;
 
@@ -94,6 +95,15 @@ public class bookBoardServiceImpl implements BookBoardService{
 		}
 
 	
+	}
+
+	@Override
+	public BookShowInfo getBookShowInfo(String bookname) {
+	
+		BookShowInfo BookShowList = bookInfoRepository.BookShowInfoBoard(bookname);
+		
+		
+		return BookShowList;
 	}
 
 	

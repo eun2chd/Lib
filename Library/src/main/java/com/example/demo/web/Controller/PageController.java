@@ -80,10 +80,6 @@ public class PageController {
 		return "accounts/accounts-password";
 	}
 
-	@GetMapping("/book/bookshow")
-	public String BookShowInfo() {
-		return "book/Bookshow";
-	}
 	
 	
 }	

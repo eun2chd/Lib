@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link rel="stylesheet" href="/css/book-info.css">
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/book-info.css">
+
 </head>
 <body>
 	<jsp:include page="../include/nav.jsp"></jsp:include>
@@ -27,6 +30,8 @@
             <div class="bok-in">
                 <h2>책 상세정보를 확인하세요!</h2>
             </div>
+            
+            
 
         <div class="content-title">   
             <h2>도서의 상세 내용을 확인하세요</h2>
@@ -39,36 +44,63 @@
                 </div>
                 <div class="info">
                     <ul>
+                  
                         <li>
-                            <b style="font-size: 21px;">책 제목을 출력하세요</b>
+                        	<c:if test="${empty show.BOOK_NAME }">
+                        		<b style="font-size: 21px;color : #c56816 " class = "bookname">정보없음</b>
+                        	</c:if>
+                            <b style="font-size: 21px;color : #c56816 " class = "bookname">${showbook.BOOK_NAME }</b>
                         </li>
                         <li>
                             <strong>ID : </strong>
-                                <span class ="id">ID값을 출력하세요</span>
+                            <c:if test="${empty show.KEY_NUM }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                                <span class ="id">${showbook.KEY_NUM }</span>
                         </li>
                         <li>
                             <strong>도서관 : </strong>
-                                <span class ="location">도서관을 출력하세요</span>
+                             <c:if test="${empty show.LOCATION }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                            
+                                <span class ="location">${showbook.LOCATION }</span>
                         </li>
                         <li>
                             <strong>자료실 : </strong>
-                                <span class ="ref_room">자료실 출력하세요</span>
+                             <c:if test="${empty show.REF_ROOM }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                                <span class ="ref_room">${showbook.REF_ROOM }</span>
                         </li>
                         <li>
+                       
                             <strong>저자 : </strong>
-                                <span class ="author">저자 출력하세요</span>
+                              <c:if test="${empty show.AUTHOR }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                                <span class ="author">${showbook.AUTHOR }</span>
                         </li>
                         <li>
                             <strong>출판사 : </strong>
-                                <span class ="publisher">출판사 출력하세요</span>
+                                <c:if test="${empty show.PUBLISHER }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                                <span class ="publisher">${showbook.PUBLISHER }</span>
                         </li>
                         <li>
                             <strong>년도 : </strong>
-                                <span class ="year">년도 출력하세요</span>
+                             <c:if test="${empty show.YR_PUBLICATION }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>	
+                                <span class ="year">${showbook.YR_PUBLICATION }</span>
                         </li>
                         <li>
                             <strong>책 코드 : </strong>
-                                <span class ="call_sign">책 코드 출력하세요</span>
+                             <c:if test="${empty show.CALL_SIGN }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                                <span class ="call_sign">${showbook.CALL_SIGN }</span>
                         </li>
                     
                     </ul>
@@ -91,10 +123,29 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>ddd</td>
-                            <td>ddd</td>
-                            <td>ddd</td>
-                            <td>ddd</td>
+                            <td>
+                              <c:if test="${empty show.CALL_SIGN}">
+                        		<span class ="id">정보없음</span>
+                        	  </c:if>
+                            ${showbook.CALL_SIGN }
+                            </td>
+                            <td>
+                              <c:if test="${empty show.STATUS_CD }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                        	
+                            </td>
+                            <td>  
+                            <c:if test="${empty show.REF_ROOM }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                            
+                            ${showbook.REF_ROOM }</td>
+                            <td>
+                              <c:if test="${empty KEY_NUM }">
+                        		<span class ="id">정보없음</span>
+                        	</c:if>
+                            ${showbook.KEY_NUM }</td>
                         </tr>
                       
                     </tbody>
