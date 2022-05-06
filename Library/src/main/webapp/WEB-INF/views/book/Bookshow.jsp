@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>책 상세 페이지</title>
 </head>
 <body>
 	<jsp:include page="../include/nav.jsp"></jsp:include>

@@ -265,6 +265,7 @@ function signup() {
 submitBtn.onclick = () => {
 
 	var flag = chkPWresult();
+
 	
 	if(flag == true) {
 		signup();
