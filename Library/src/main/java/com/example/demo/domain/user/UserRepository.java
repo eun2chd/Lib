@@ -8,7 +8,6 @@ public interface UserRepository {
 //	insert int 로 하는 이유 : 몇건이 삽입되었는지 받아오기 위함
 	public int insertUser(User user);
 	public User getUserByOauth2Username(String oauth2_username);
-//	public UserDtl getUserDtlById(int id);
 	
 //	아이디 중복체크
 	public int IdCheck(String userid);

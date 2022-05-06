@@ -87,6 +87,7 @@ table, th, td {
    }
 
    .content  .thumb {
+   	 margin-bottom : 40px;
      float:left;
      width: 30%;
    }
@@ -150,15 +151,18 @@ table, th, td {
    }
  
    .detailtable table {
+   	   margin-top : 20px;
        width: 100%;
        border-top : 2px solid #5f6062;
        border-bottom: 2px solid #d2d2d2;
    }
    
    th {
+    padding : 20px;
     border-bottom: 1px solid #ccc;
    }
    td{
+   	   padding : 20px;
        text-align: center;
    }
      

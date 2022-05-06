@@ -67,7 +67,7 @@
 						<div class="sub-box-left">
 							<div class="sub-item">
 								<div class="clip">
-									<a href="#"> <span class="text">${book.BOOK_NAME }</span>
+									<a href="/book/bookshow?bookname=${book.BOOK_NAME }"> <span class="text">${book.BOOK_NAME }</span>
 									</a>
 									<p class="text">지은이 : ${ book.AUTHOR}</p>
 									<p>출판사 : ${book.PUBLISHER}</p>

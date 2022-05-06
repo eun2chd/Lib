@@ -32,6 +32,8 @@ public class BookWrapListController {
 			List<BookBoard> boardList = bookBoardService.getBookBoard(Page);	
 			Paging BookPage = new Paging();
 			
+		
+			
 			int totalCount = bookInfoRepository.bookListTotalCount();
 			// 전체 페이지 수 가져오기
 			int totalPage = BookPage.TotalPage(bookInfoRepository.bookListTotalCount());
