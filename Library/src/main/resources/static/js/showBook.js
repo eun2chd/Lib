@@ -1,31 +1,24 @@
-/*
-let 
-let 
-let 
-let Btn = document.querySelector('.brow-bt');
-let key = $('key').val();*/
+const BroBtn = document.querySelector('.bro-btn');
 
 
 function BookBorrow() { 
-   const Book_Name = "정신병과 심리학"
-   const Book_Author = "미셀 푸코 지음:박혜영 옮김";
-   const Book_Publisher = "아름드라미디어";
-   const Book_Loction = "수영도서관";
-   var key = $('.brow-bt').val();
+   const Book_Name = $('.bookname').text();
+   const Book_Author = $('.author').text();
+   const Book_Publisher = $('.publisher').text();
+   const Book_Loction = $('.location').text();
    
    	let BookObj = {
 		bookname : Book_Name,
 		bookauthor : Book_Author,
 		bookpublisher : Book_Publisher,
 		bookloction : Book_Loction,
-		test : key
 	}
    
    console.log(BookObj);  
   
   $.ajax({
 	  type : "post",
-      url :"book-search/borrow",
+      url :"/book/bookshow/borrow",
       data : BookObj,
 	  dataType : "text",
 	  success : function(data) {
@@ -36,6 +29,14 @@ function BookBorrow() {
 	}
   });
 }
+
+
+BroBtn.onclick = () => {
+	
+	BookBorrow();
+	
+}
+
 
 /*function BookBorrow() {
 	

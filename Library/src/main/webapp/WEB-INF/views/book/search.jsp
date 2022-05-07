@@ -227,8 +227,6 @@
 	});
 </script>
 
-<script src = "/js/search.js"></script>
-
 
 
 

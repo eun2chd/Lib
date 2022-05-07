@@ -11,7 +11,7 @@ public class BorrowReqDto {
 	private String bookauthor;
 	private String bookpublisher;
 	private String booklocation;
-	
+
 	
 	public BookBorrowBoard toEntity(int userkey) {
 		return BookBorrowBoard.builder()

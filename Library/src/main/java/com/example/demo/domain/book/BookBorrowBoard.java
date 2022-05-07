@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class BookBorrowBoard {
 
-	private int id;
 	private String bookname;
 	private String bookauthor;
 	private String bookpublisher;
