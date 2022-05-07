@@ -36,11 +36,7 @@ https://library.busan.go.kr/busanlibrary/index.do
 - 하지만 꾸준히 코드를 보고 서비스가 무슨역할이지? 라는 생각으로 전에 수업을 들은 코드들을 계속 복기하다보니 그때서야 해당 로직에 대한 개념이 머리속에 정리되었습니다.
 - 페이징처리를 완성하고 해당 로직을 서비스에서 처리한뒤 컨트롤러에 넘겨주고 view 로 전달해줘서 성공적으로 페이징을 마무리 할 수 있었습니다.
 # 완성한 페이징 처리 #
-![image](https://user-images.githubusercontent.com/92193144/167233633-4bffd63c-4edc-4d8f-957f-c8f334cfe078.png)
-
-
-
-
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/92193144/167233709-b3a88bd0-b517-4fe9-aadc-7e283099d232.gif)
 
 
 
