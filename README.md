@@ -36,6 +36,20 @@ https://library.busan.go.kr/busanlibrary/index.do
 ![image](https://user-images.githubusercontent.com/92193144/167233996-9d6642c4-ccaa-4cea-a715-306b20493520.png)
 # 로그인시 이용가능한 내서재 페이지 #
 ![image](https://user-images.githubusercontent.com/92193144/167234026-d4e9c59b-6bb3-4d3b-98fc-b4fdf0324b81.png)
+# 책 상세페이지 #
+![image](https://user-images.githubusercontent.com/92193144/167305644-4a4f20cc-965d-45cb-92e6-1c42807edb1a.png)
+# 책 대출하기 #
+![image](https://user-images.githubusercontent.com/92193144/167305668-2a795647-61a2-437f-bfa7-bbdb5e841fed.png)
+- 대출하기 ajax 요청한뒤 페이지 리로드 시켜서 대출가능 -> 대출불가로 바로 변경
+- 로그인 안되있을시 로그인 페이지 이동
+![image](https://user-images.githubusercontent.com/92193144/167305691-fd89cffe-d082-4293-be30-de50259aeee8.png)
+![image](https://user-images.githubusercontent.com/92193144/167305708-f713a413-e7f6-41db-8858-5648a34b5e22.png)
+![image](https://user-images.githubusercontent.com/92193144/167305718-8efc59e6-1d99-45da-be83-a84a3a70542f.png)
+# 내서재에서 대출한책 확인하기 #
+- 방금 대출한책 대출중인도서에서 확인
+![image](https://user-images.githubusercontent.com/92193144/167305733-2afa2f2f-da4a-461a-ab23-a04e48c5c2b0.png)
+
+
 ##
 # 구현하면서 어려웠던 점 #
 - 수업받을때는 스크롤 형식의 페이징을 배웠습니다. 하지만 제가 구현하고 싶었던 페이징은 번호를 이용한 페이징이었기 때문에
