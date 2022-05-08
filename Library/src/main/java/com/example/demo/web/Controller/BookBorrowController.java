@@ -25,15 +25,11 @@ public class BookBorrowController {
 	private final BookBoardService bookBoardService;
 	
 	@PostMapping("/book/bookshow/borrow")
-	public boolean BookBorrowInsert(@AuthenticationPrincipal PrincipalDetails principalDetails,BorrowReqDto borrowReqDto) {
-
+	public int BookBorrowInsert(@AuthenticationPrincipal PrincipalDetails principalDetails,BorrowReqDto borrowReqDto) {
 		
-		System.out.println(principalDetails);
-		System.out.println(borrowReqDto);
 		
-		return true;
+		return bookBoardService.insertBorrowBook(principalDetails, borrowReqDto);
+		
 	}
 	
-
-
 }

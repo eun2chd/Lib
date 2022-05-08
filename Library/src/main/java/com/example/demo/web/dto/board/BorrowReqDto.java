@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 public class BorrowReqDto {
 	
+	private int id;
 	private String bookname;
 	private String bookauthor;
 	private String bookpublisher;
@@ -15,6 +16,7 @@ public class BorrowReqDto {
 	
 	public BookBorrowBoard toEntity(int userkey) {
 		return BookBorrowBoard.builder()
+				.id(id)
 				.bookname(bookname)
 				.bookauthor(bookauthor)
 				.bookpublisher(bookpublisher)

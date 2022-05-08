@@ -5,11 +5,16 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.config.auth.PrincipalDetails;
 import com.example.demo.domain.book.BookBoard;
+import com.example.demo.domain.book.BookBorrowBoard;
 import com.example.demo.domain.book.BookSearch;
 import com.example.demo.domain.book.BookShowInfo;
+import com.example.demo.domain.book.MyLibBoard;
 import com.example.demo.domain.book.Paging;
 import com.example.demo.domain.user.BookInfoRepository;
+import com.example.demo.web.dto.board.BorrowReqDto;
+
 
 import lombok.RequiredArgsConstructor;
 
@@ -105,8 +110,54 @@ public class bookBoardServiceImpl implements BookBoardService{
 		
 		return BookShowList;
 	}
+	
 
-	
+	@Override
+	public int insertBorrowBook(PrincipalDetails principalDetails, BorrowReqDto borrowReqDto) {
+		// TODO Auto-generated method stub
+		int code = 0;
 		
-	
+		if(principalDetails != null) {
+			
+			BookShowInfo bookShowInfo = new BookShowInfo();
+			
+			int status = bookInfoRepository.selectBorrowBoard(borrowReqDto.getId());
+			
+			if(status != 0) {
+				BookBorrowBoard borrowEntity = borrowReqDto.toEntity(principalDetails.getUser().getId());
+				bookInfoRepository.insertBorrowBoard(borrowEntity);
+				bookInfoRepository.updateBorrowBoard(borrowReqDto.getId());
+				return  code = 200;
+			}else {
+				return  code = 400;
+			}
+		
+			
+		}else {
+		     return code = 401;
+		}
+		
+
+	}
+
+	@Override
+	public List<MyLibBoard> getLibBookBoard(String user_id,int page) {
+		
+		List<MyLibBoard> LibBoardList = new ArrayList<MyLibBoard>();
+		List<MyLibBoard> LibList = bookInfoRepository.getMyLibBoard(user_id);
+		
+		
+		int totalSize = LibList.size();
+		int startIndex = (page - 1) * 10;
+		int endindex = page * 10;
+		
+		for(int i = startIndex; i < endindex && i < totalSize; i++) {
+			LibBoardList.add(LibList.get(i));
+		}
+		
+		// TODO Auto-generated method stub
+		return LibBoardList;
+	}
+
+
 }

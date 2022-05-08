@@ -34,7 +34,7 @@
 
 
 			<div class="content-title">
-				<h2>도서의 상세 내용을 확인하세요</h2>
+				<h2>도서의 상세 내용을 확인하세요. <buntton class = "pagedown" type = "button"  style = "cursor: pointer;color:red">[이전페이지로 돌아갈래요!]</buntton></h2>
 			</div>
 
 			<div class="content">

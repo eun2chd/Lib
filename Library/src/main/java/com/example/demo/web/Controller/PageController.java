@@ -43,14 +43,9 @@ public class PageController {
 		return "auth/signin";
 	}
 	
-	@GetMapping("/user/myLib")
-	public String MyLibForm() {
-		return "user/myLib";
-	}
-	
 
 	@GetMapping("/user/myhistory")
-	public String MyLibHistory() {
+	public String myLibHistory() {
 		return "user/myLibHistory";
 	}
 	

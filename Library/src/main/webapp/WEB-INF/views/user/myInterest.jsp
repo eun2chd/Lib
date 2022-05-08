@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>     
     
     
     
@@ -36,7 +41,7 @@
                             </a>
                             <ul>
                                 <li class="active">
-                                    <a href="/user/myLib">
+                                    <a href="/user/lib/${principal.user.userid }?page=1">
                                         <span style="font-weight: bold; color : #4c4c4c;">대출중인 도서</span>
                                     </a>
 

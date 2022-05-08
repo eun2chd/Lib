@@ -35,7 +35,7 @@
 						<ul>
 					
 
-							<li><a href="/user/myLib"> <span
+							<li><a href="/user/lib/${principal.user.userid }?page=1"> <span
 									style="font-weight: bold;">대출중인 도서</span>
 							</a></li>
 							<li><a href="/user/myhistory"> <span

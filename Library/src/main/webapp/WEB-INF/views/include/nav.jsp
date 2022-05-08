@@ -46,12 +46,12 @@
                       		 <li> <a href="/auth/signup-terms">회원가입</a></li>
                        
                        		 <!-- 내서재 클릭시 로그인 페이지 이동 -->
-                      		 <li><a href="/user/myLib" class="lib">내 서재</a></li>
+                      		 <li><a href="/auth/signin" class="lib">내 서재</a></li>
                     	</c:when>
                     	<c:otherwise>
                     	    <li><a href="#">${principal.user.username }님</a></li>
                             <li> <a href="/logout">로그아웃</a></li>
-                            <li><a href="/user/myLib" class="lib">내 서재</a></li>
+                            <li><a href="/user/lib/${principal.user.userid }?page=1" class="lib">내 서재</a></li>
                     	</c:otherwise>
                     
                     </c:choose>

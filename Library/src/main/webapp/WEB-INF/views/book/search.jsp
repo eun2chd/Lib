@@ -71,7 +71,8 @@
 
             <div class="show-search">
                 <div class="show-search-in">
-                    <h3>통합검색</h3>
+                    <h3 style = "display:inline-block">통합검색</h3> <span style = "margin : 30px; color : blue;font-weight : bold;font-size:18px" >책 제목을 클릭하면 상세 정보 및 대출이 가능합니다.!</span>
+      
                 </div>
             </div>
 
@@ -114,7 +115,7 @@
 		<!-- 책정보 Start-->
 
                 <ul class ="book-result">
-              	   <c:forEach var = "book" items = "${Serch }">
+              	   <c:forEach var = "book" items = "${Serch }" varStatus = "status">
                     <li>
                         <span class = "chk">
                             <input type="checkbox" title="선택" name = "chk">
@@ -125,27 +126,33 @@
                             </span>
                         </div>
                         <div class = "book-clip">
-                           <a href = "/book/bookshow?bookname=${book.BOOK_NAME }"> <p class = "book-name" >제목 : "${book.BOOK_NAME }"</p></a>
+                           <a href = "/book/bookshow?bookname=${book.BOOK_NAME }"> <p class = "book-name" data-book-name='${book.BOOK_NAME}' >제목 : "${book.BOOK_NAME }"</p></a>
                             <p class = "book-author">저자 : "${book.AUTHOR }"</p>
                             <p class = "book-publisher">출판사 : "${book.PUBLISHER }"</p>
                             <p class = "book-location">도서관 : "${book.LOCATION }"</p>                                             
                             <p>코드 : "${book.CALL_SIGN }"</p>
+                            <p type ="hidden" name = BookBorrow(bookname${status.index }) value = "${book.BOOK_NAME }"></p>                            
                         </div>
                         <div class = "brow-book-view">
                             <span>
-                                <a href="#" style= "color : #0459d7; font-weight: bold;">대출가능</a>
+                                  <c:choose>
+									 	<c:when test="${book.status_cd eq 1}">
+									 			  <a href="/book/bookshow?bookname=${book.BOOK_NAME }" style= "color : #0459d7; font-weight: bold;">대출가능</a>
+									 	</c:when>
+									 	<c:otherwise>
+									 		  <a href="/book/bookshow?bookname=${book.BOOK_NAME }" style= "color : red; font-weight: bold;">대출불가</a>
+									 	</c:otherwise>
+									 
+									 </c:choose>          
+                              
                             </span>
-                            <p style = "display: none;">대출 불가</p>
-                            <div class = "brow-book-btn">
-                            <span>
-                              	<button class = "brow-bt" name = "test" value="2" onclick =  "BookBorrow()">대출하기</button>
-                            </span>
-                            </div>
+                                      
                         </div>
                     </li>
                  </c:forEach>             
                 </ul>
                 
+                <!-- start button -->
             <div class="bar-btns">
 				<div class="page_nation">
 				<c:if test="${bookSerch.prev }">
@@ -164,6 +171,10 @@
 			
 				</div>
 			</div>
+			
+			<!-- end buttons -->
+			
+			
                 
                    
             </div>
@@ -226,7 +237,6 @@
 		
 	});
 </script>
-
 
 
 

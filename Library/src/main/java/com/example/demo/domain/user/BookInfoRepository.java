@@ -8,6 +8,7 @@ import com.example.demo.domain.book.BookBoard;
 import com.example.demo.domain.book.BookBorrowBoard;
 import com.example.demo.domain.book.BookSearch;
 import com.example.demo.domain.book.BookShowInfo;
+import com.example.demo.domain.book.MyLibBoard;
 import com.example.demo.domain.book.Paging;
 
 @Mapper
@@ -24,6 +25,15 @@ public interface BookInfoRepository {
 	
 //	빌린책 삽입 쿼리 날리기
 	public int insertBorrowBoard(BookBorrowBoard bookBorrowBoard);
+//  빌린책 TBLIB STATUS 코드 업데이트 대출여부
+	public int updateBorrowBoard(int id);
+//  빌린책 status 코드 조회
+	public int selectBorrowBoard(int id);
+	
+//	대출이력 조회
+	public List<MyLibBoard> getMyLibBoard(String user_id);
+//  총 갯수 조회
+	public int getMyLibTotal(int userkey);
 	
 	
 	// 책 검색 list 로 담아오기

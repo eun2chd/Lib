@@ -26,7 +26,11 @@ public class BookShowController {
 	@GetMapping("/book/bookshow")
 	public String BookShow(Model model, @RequestParam(value = "bookname")  String bookname) {
 		
+		System.out.println(bookname);
+		
 		BookShowInfo BookShowBoard = bookBoardService.getBookShowInfo(bookname);
+		
+		System.out.println(BookShowBoard);
 	
 		model.addAttribute("showbook",BookShowBoard);
 		

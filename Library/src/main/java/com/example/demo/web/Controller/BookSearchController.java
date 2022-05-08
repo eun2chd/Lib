@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.domain.book.BookSearch;
+import com.example.demo.domain.book.BookShowInfo;
 import com.example.demo.domain.book.Paging;
 import com.example.demo.domain.user.BookInfoRepository;
 import com.example.demo.service.BookBoardService;
@@ -26,8 +27,6 @@ public class BookSearchController {
 		public String SearchForm(Model model, @RequestParam(value = "keyword") String keyword, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
 			int total = 0;
 			List<BookSearch> BookSearchBoard = bookBoardService.getBookSearch(keyword,page);
-			System.out.println(BookSearchBoard);
-			
 			
 			Paging BookPag = new Paging();
 //			사용자가 입력한 key값을 넘겨주기
@@ -52,7 +51,6 @@ public class BookSearchController {
 //			다음버튼 활성화 여부
 			BookPag.pageNext(total);
 		
-			
 
 			model.addAttribute("Serch", BookSearchBoard);
 			model.addAttribute("bookSerch", BookPag);
